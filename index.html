@@ -1,30 +1,306 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Twenty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-<style>
-:root{
-  --red: #FD000D;
-  --red-dark; #B7000A;
-  --fuschia:#F0027F;
-  --fuschia-dark:#B2015D;
-  --orange: #FF9900;
-  --orange-dark: #FF6600;
-  --purple: #AE017E;
-  --purple-dark: #640163;
-  --green: #81C61C;
-  --green-dark: #5C8B15;
-  --blue: #00999A;
-  --blue-dark: #00656A;
-}
-</style>
-<body>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfFqdzZLrYElW1n7hIAiNWuy7wPZPBQGwTy5brg9C80A8Pqdw/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-<p>Click the button to display an alert box:</p>
+	<head>
+		<title>Twenty by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<style>
+	/*:root{
+	  --red: #FD000D;
+	  --red-dark; #B7000A;
+	  --fuschia:#F0027F;
+	  --fuschia-dark:#B2015D;
+	  --orange: #FF9900;
+	  --orange-dark: #FF6600;
+	  --purple: #AE017E;
+	  --purple-dark: #640163;
+	  --green: #81C61C;
+	  --green-dark: #5C8B15;
+	  --blue: #00999A;
+	  --blue-dark: #00656A;
+	}*/
+	#header {
+		/*color:#B7000A!important;*/
+		/*background: rgba(52, 27, 43, 0.6)!important;*/
+		/*background: rgba(129, 198, 28, 0.7)!important;*/
+	}
+	#logo {
+		/*position:absolute!important;*/
 
-<button onclick="myFunction()">Try it</button>
+		height:28px;
+	}
+	.button.special {
+		background-color:#81C61C;
+	}
+	</style>
+	<body class="index">
+		<div id="page-wrapper">
 
-<script>
+			<!-- Header -->
+				<header id="header" class="alt">
+					<img id="logo" src="images/logo.png"></img>
+					<!-- <h1 id="logo"> LOGO </h1> -->
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="index.html">Home</a></li>
+							<li class="submenu">
+								<a href="#">Partenaires</a>
+								<ul>
+									<li><a href="partenaire.html">Partenaire1</a></li>
+									<li><a href="partenaire2.html">Partenaire2</a></li>
+									<li><a href="contact.html">Contact</a></li>
+									<li class="submenu">
+										<a href="#">Submenu</a>
+										<ul>
+											<li><a href="#">Dolore Sed</a></li>
+											<li><a href="#">Consequat</a></li>
+											<li><a href="#">Lorem Magna</a></li>
+											<li><a href="#">Sed Magna</a></li>
+											<li><a href="#">Ipsum Nisl</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="#" class="button special">S'inscrire</a></li>
+						</ul>
+					</nav>
+				</header>
 
-</script>
+			<!-- Banner -->
+				<section id="banner">
 
-</body>
+					<!--
+						".inner" is set up as an inline-block so it automatically expands
+						in both directions to fit whatever's inside it. This means it won't
+						automatically wrap lines, so be sure to use line breaks where
+						appropriate (<br />).
+					-->
+					<div class="inner">
+
+						<header>
+							<h2>L'ECHAPEE MAYA</h2>
+						</header>
+						<p>Vivez <strong>l'aventure</strong> dans le
+						<br />
+						Yucatan
+						<br />
+						<!-- by <a href="http://html5up.net">HTML5 UP</a>.</p> -->
+						<footer>
+							<ul class="buttons vertical">
+								<li><a href="#main" class="button fit scrolly">Tell Me More</a></li>
+							</ul>
+						</footer>
+
+					</div>
+
+				</section>
+
+			<!-- Main -->
+				<article id="main">
+
+					<header class="special container">
+						<!-- <span class="icon fa-bar-chart-o"></span> -->
+						<span class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABtUlEQVR4Xu2Y4XHCMAyFlQ26AhuxCSuUCcoIHY0NGKE9jvQO1CTPQpIdnx8/E50sfXqSRSYZ/DcNnr8QABUwOAG2wOAC4BBkC7AFBifAFggUwE+grxJXIcULcTJHSwAlZQu0CSleiBMq4EFAt0Ak3DT/kUESgOrvZ7hfInKc33+LyHllFmzZpQCuoYCLiJxUwncAn+oZsusWwE1EPlSyVxE5qGfIrlsAa/uBVh+yI4CNGfP2elFjBqDK/gWP7HajgNorr7W6pqKajBttfARgJGAqqsmYCnhv57cOr2z7F0FFKAD5yE7I6r85AGNLw0/3BOBZkJB8l/6HWyvY2n4zRwIoKE/05oegVz0PBZPRAujM3QNACWhReRPynhc+A7wBFXSd66o2XYslyZgcLmRHBVhL7rnXrZ/nlxTgrRjKF6mu6vkEkNCzSAGt378UvYUCugOAehYl5O3p6PPNCogOAAHT76PPbw4AJeTdO9AmSgDPhDgEeQ3+J+Cd2tYhV9vePANqB5h9HgSQHcCu/KMraVfBZgRDABlUe/JJBfRUrYxYqYAMqj35pAJ6qlZGrFRABtWefP4CGiNiQQmwx+IAAAAASUVORK5CYII=" width="64" height="64">
+						</span>
+						<h2>Phrase <strong>d'accroche</strong>
+						</h2>
+						<p>Courte  <strong>Description</strong> de
+						<br />
+					l'évenement<strong>bla</strong>,
+					blalbalbal
+						</p>
+					</header>
+
+					<!-- One -->
+						<!-- <section class="wrapper style2 container special-alt">
+							<div class="row 50%">
+								<div class="8u 12u(narrower)">
+
+									<header>
+										<h2>Behold the <strong>icons</strong> that visualize what you’re all about. or just take up space. your call bro.</h2>
+									</header>
+									<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu comteger ut fermentum lorem. Lorem ipsum dolor sit amet. Sed tristique purus vitae volutpat ultrices. eu elit eget commodo. Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo.</p>
+									<footer>
+										<ul class="buttons">
+											<li><a href="#" class="button">Find Out More</a></li>
+										</ul>
+									</footer>
+
+								</div>
+								<div class="4u 12u(narrower) important(narrower)">
+
+									<ul class="featured-icons">
+										<li><span class="icon fa-clock-o"><span class="label">Feature 1</span></span></li>
+										<li><span class="icon fa-volume-up"><span class="label">Feature 2</span></span></li>
+										<li><span class="icon fa-laptop"><span class="label">Feature 3</span></span></li>
+										<li><span class="icon fa-inbox"><span class="label">Feature 4</span></span></li>
+										<li><span class="icon fa-lock"><span class="label">Feature 5</span></span></li>
+										<li><span class="icon fa-cog"><span class="label">Feature 6</span></span></li>
+									</ul>
+
+								</div>
+							</div>
+						</section> -->
+
+					<!-- Two -->
+						<!-- <section class="wrapper style1 container special">
+							<div class="row">
+								<div class="4u 12u(narrower)">
+
+									<section>
+										<span class="icon featured fa-check"></span>
+										<header>
+											<h3>This is Something</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+									</section>
+
+								</div>
+								<div class="4u 12u(narrower)">
+
+									<section>
+										<span class="icon featured fa-check"></span>
+										<header>
+											<h3>Also Something</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+									</section>
+
+								</div>
+								<div class="4u 12u(narrower)">
+
+									<section>
+										<span class="icon featured fa-check"></span>
+										<header>
+											<h3>Probably Something</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+									</section>
+
+								</div>
+							</div>
+						</section> -->
+
+					<!-- Three -->
+						<section class="wrapper style3 container special">
+
+							<header class="major">
+								<h2>Nos <strong>Partenaires</strong></h2>
+							</header>
+
+							<div class="row">
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="partenaire.html" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+										<header>
+											<h3>Partenaire 1</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+									</section>
+
+								</div>
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="partenaire2.html" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+										<header>
+											<h3>Partenaire 2</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+									</section>
+
+								</div>
+							</div>
+							<div class="row">
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="partenaire.html" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+										<header>
+											<h3>Partenaire 3</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+									</section>
+
+								</div>
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="partenaire.html" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+										<header>
+											<h3>Partenaire 4!</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+									</section>
+
+								</div>
+							</div>
+
+							<footer class="major">
+								<ul class="buttons">
+									<li><a href="#" class="button">See More</a></li>
+								</ul>
+							</footer>
+
+						</section>
+
+				</article>
+
+			<!-- CTA -->
+				<section id="cta">
+
+					<header>
+						<h2>Ready to do <strong>something</strong>?</h2>
+						<p>Proin a ullamcorper elit, et sagittis turpis integer ut fermentum.</p>
+					</header>
+					<footer>
+						<ul class="buttons">
+							<li><a href="#" class="button special">S'INSCRIRE</a></li>
+							<li><a href="#" class="button">Haut de page</a></li>
+						</ul>
+					</footer>
+
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+
+					<ul class="icons">
+						<li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
+						<li><a href="#" class="icon circle fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribbble</span></a></li>
+					</ul>
+
+					<ul class="copyright">
+						<li>&copy; Office du tourisme du mexique</li><li>Design: <a href="https://a4-images.myspacecdn.com/images03/30/8038f94a8b2c4e7aa87a3ad44424a168/300x300.jpg">Un tipo</a></li>
+					</ul>
+
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
