@@ -1665,10 +1665,10 @@
 	}
 
 		header.special:before, header.special:after {
-			border-bottom: solid 1.5px;
-			border-top: solid 1.5px;
+			border-bottom: solid 4px;
+			border-top: solid 4px;
 			content: '';
-			height: 7px;
+			height: 19px;
 			opacity: 0.1;
 			position: absolute;
 			top: 1.75em;
@@ -2274,10 +2274,10 @@
 				}
 
 		#header.reveal {
-			-moz-animation: reveal-header 0.5s;
+			/*-moz-animation: reveal-header 0.5s;
 			-webkit-animation: reveal-header 0.5s;
 			-ms-animation: reveal-header 0.5s;
-			animation: reveal-header 0.5s;
+			animation: reveal-header 0.5s;*/
 		}
 
 		#header.alt {
@@ -2403,20 +2403,20 @@
 		/*background-position: bottom left, bottom right, top left, top center;*/
 		/*background-repeat: no-repeat, no-repeat, repeat, no-repeat;
 		background-size: 25em, 25em, auto, cover;*/
-		background-image: url("../../images/yucatan1.jpg");
+		/*background-image: url("../../images/yucatan1.jpg");*/
 		background-position: top center;
 		background-size: cover;
 		color: #fff;
 		cursor: default;
-		padding: 6em 0;
+		padding: 6em 0 3em 0;
 		text-align: center;
 	}
 
 		#banner .inner {
-			-moz-animation: reveal-banner 1s 0.25s ease-in-out;
-			-webkit-animation: reveal-banner 1s 0.25s ease-in-out;
-			-ms-animation: reveal-banner 1s 0.25s ease-in-out;
-			animation: reveal-banner 1s 0.25s ease-in-out;
+			-moz-animation: reveal-banner 0.5s 0.1s ease-in-out;
+			-webkit-animation: reveal-banner 0.5s 0.1s ease-in-out;
+			-ms-animation: reveal-banner 0.5s 0.1s ease-in-out;
+			animation: reveal-banner 0.5s 0.1s ease-in-out;
 			-moz-animation-fill-mode: forwards;
 			-webkit-animation-fill-mode: forwards;
 			-ms-animation-fill-mode: forwards;

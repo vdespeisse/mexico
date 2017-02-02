@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
 	</head>
 	<style>
 	/*:root{
@@ -42,8 +43,26 @@
 	.button.special {
 		background-color:#81C61C;
 	}
+	#banner {
+		transition: all 0.5s ease-in;
+	}
+	.slider-buttons {
+		padding: 4em 0 1em 0;
+		color:hotpink;
+	}
+	.slider-buttons img {
+		margin-left:3px;
+		border-radius:12px;
+		border: solid 1px transparent;
+		cursor:pointer;
+
+	}
+	.slider-buttons img.active {
+
+		border: solid 1px white;
+	}
 	</style>
-	<body class="index">
+	<body class="index" id="mainbody">
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -75,9 +94,8 @@
 						</ul>
 					</nav>
 				</header>
-
 			<!-- Banner -->
-				<section id="banner">
+				<section id="banner" :style="{ 'background-image': current_bg}">
 
 					<!--
 						".inner" is set up as an inline-block so it automatically expands
@@ -102,6 +120,15 @@
 						</footer>
 
 					</div>
+					<div class="slider-buttons">
+						<img :class="{ active: currentIndex===0}" @click="force_slider(0)" src="images/slider/b_rojo.png"></img>
+						<img :class="{ active: currentIndex===1}" @click="force_slider(1)" src="images/slider/b_rosa.png"></img>
+						<img :class="{ active: currentIndex===2}" @click="force_slider(2)" src="images/slider/b_naranja.png"></img>
+						<img :class="{ active: currentIndex===3}" @click="force_slider(3)" src="images/slider/b_morado.png"></img>
+						<img :class="{ active: currentIndex===4}" @click="force_slider(4)" src="images/slider/b_verde.png"></img>
+						<img :class="{ active: currentIndex===5}" @click="force_slider(5)" src="images/slider/b_azul.png"></img>
+
+					</div>
 
 				</section>
 
@@ -117,7 +144,6 @@
 						<p>Courte  <strong>Description</strong> de
 						<br />
 					l'évenement<strong>bla</strong>,
-					blalbalbal
 						</p>
 					</header>
 
@@ -293,6 +319,7 @@
 		</div>
 
 		<!-- Scripts -->
+
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -301,6 +328,7 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/app.js"></script>
 
 	</body>
 </html>
