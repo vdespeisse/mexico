@@ -22,6 +22,9 @@
 	.quizz-icon {
 		margin-right:10px;
 	}
+	.inactive {
+		pointer-events: none;
+	}
 	</style>
 	<div id="page-wrapper">
 
@@ -51,6 +54,9 @@
 
 			<!-- One -->
 			<section class="wrapper style4 special container 50%">
+				<div class="image featured"><img src="images/quizz/pyramid.jpg" alt="" /></div>
+				<p> Inscrivez vous et remplissez le quizz pour avoir une chance de <strong>gagner le voyage</strong> !</p>
+				<p style="font-size: 12pt"> * champs obligatoire </p>
 
 				<!-- Content -->
 				<iframe class="hiddenFrame" name="hiddenFrame" style="display: none"></iframe>
@@ -189,12 +195,15 @@
 				empreinte = shuffle(empreinte)
 				xlairways = shuffle(xlairways)
 				amresorts = shuffle(amresorts)
+				mexique = shuffle(mexique)
 				questions.push(empreinte[0])
 				questions.push(empreinte[1])
 				questions.push(xlairways[0])
 				questions.push(xlairways[1])
 				questions.push(amresorts[0])
 				questions.push(amresorts[1])
+				questions.push(mexique[0])
+				questions.push(mexique[1])
 
 				questions = shuffle(questions)
 				return {
@@ -215,10 +224,12 @@
 					// if (this.noQuestionSelected) return
 					if (this.responses[this.currentQuestion]) this.iconColors[this.currentQuestion] = "#000000"
 					this.currentQuestion+=1
+					this.noQuestionSelected = true
 				},
 				updateResponses(index,correct) {
 					this.responses[index] = correct
 					this.score =  this.responses.filter(d => d).length
+					this.noQuestionSelected = false
 					}
 			},
 			watch: {
