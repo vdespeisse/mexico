@@ -1666,8 +1666,8 @@
 	}
 
 		header.special:before, header.special:after {
-			border-bottom: solid 4px;
-			border-top: solid 4px;
+			border-bottom: solid 6px;
+			border-top: solid 6px;
 			content: '';
 			height: 19px;
 			opacity: 0.1;
