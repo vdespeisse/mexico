@@ -56,6 +56,17 @@
 
 		border: solid 1px white;
 	}
+
+	.center {
+		text-align:center;
+	}
+	.lower {
+		margin-top:2em;
+	}
+	section#iconlist{
+		margin-bottom: 0;
+		transition:margin 0.1s ease;
+	}
 	</style>
 	<body class="index">
 		<div id="page-wrapper">
@@ -88,12 +99,13 @@
 					-->
 					<div class="inner">
 
+						<div style="border:5px solid white; padding: 1em">
 						<header>
 							<h2>L'éCHAPéE MAYA</h2>
 						</header>
-						<p>Vivez <strong>l'aventure</strong> dans le
+						<p>Bienvenue à <strong>l'aventure</strong> au
 						<br />
-						Yucatan
+						Mexique
 						<br />
 						<!-- by <a href="http://html5up.net">HTML5 UP</a>.</p> -->
 						<footer>
@@ -101,7 +113,7 @@
 								<li><a href="#main" class="button fit scrolly">En savoir plus</a></li>
 							</ul>
 						</footer>
-
+						</div>
 					</div>
 					<div class="slider-buttons">
 						<img :class="{ active: currentIndex===0}" @click="force_slider(0)" src="images/slider/b_rojo.png"></img>
@@ -117,17 +129,40 @@
 
 			<!-- Main -->
 				<article id="main">
+						<section id="iconlist" class="wrapper style1 container special">
+					<div class="row center">
+						<div class="3u">
+							<span class="icon"><img src="images/xl_airways/logo.png"></img>
+							</span>
+						</div>
+						<div class="3u">
+							<span class="icon"><img src="images/amresorts/logo.png"></img>
+							</span>
+						</div>
+						<div class="3u">
+							<span class="icon"><img src="images/logo.png"></img>
+							</span>
+						</div>
+						<div class="3u">
+							<span class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABtUlEQVR4Xu2Y4XHCMAyFlQ26AhuxCSuUCcoIHY0NGKE9jvQO1CTPQpIdnx8/E50sfXqSRSYZ/DcNnr8QABUwOAG2wOAC4BBkC7AFBifAFggUwE+grxJXIcULcTJHSwAlZQu0CSleiBMq4EFAt0Ak3DT/kUESgOrvZ7hfInKc33+LyHllFmzZpQCuoYCLiJxUwncAn+oZsusWwE1EPlSyVxE5qGfIrlsAa/uBVh+yI4CNGfP2elFjBqDK/gWP7HajgNorr7W6pqKajBttfARgJGAqqsmYCnhv57cOr2z7F0FFKAD5yE7I6r85AGNLw0/3BOBZkJB8l/6HWyvY2n4zRwIoKE/05oegVz0PBZPRAujM3QNACWhReRPynhc+A7wBFXSd66o2XYslyZgcLmRHBVhL7rnXrZ/nlxTgrRjKF6mu6vkEkNCzSAGt378UvYUCugOAehYl5O3p6PPNCogOAAHT76PPbw4AJeTdO9AmSgDPhDgEeQ3+J+Cd2tYhV9vePANqB5h9HgSQHcCu/KMraVfBZgRDABlUe/JJBfRUrYxYqYAMqj35pAJ6qlZGrFRABtWefP4CGiNiQQmwx+IAAAAASUVORK5CYII=" width="64" height="64">
+							</span>
+						</div>
+					</div>
+				</section>
 
 					<header class="special container">
 						<!-- <span class="icon fa-bar-chart-o"></span> -->
 						<span class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABtUlEQVR4Xu2Y4XHCMAyFlQ26AhuxCSuUCcoIHY0NGKE9jvQO1CTPQpIdnx8/E50sfXqSRSYZ/DcNnr8QABUwOAG2wOAC4BBkC7AFBifAFggUwE+grxJXIcULcTJHSwAlZQu0CSleiBMq4EFAt0Ak3DT/kUESgOrvZ7hfInKc33+LyHllFmzZpQCuoYCLiJxUwncAn+oZsusWwE1EPlSyVxE5qGfIrlsAa/uBVh+yI4CNGfP2elFjBqDK/gWP7HajgNorr7W6pqKajBttfARgJGAqqsmYCnhv57cOr2z7F0FFKAD5yE7I6r85AGNLw0/3BOBZkJB8l/6HWyvY2n4zRwIoKE/05oegVz0PBZPRAujM3QNACWhReRPynhc+A7wBFXSd66o2XYslyZgcLmRHBVhL7rnXrZ/nlxTgrRjKF6mu6vkEkNCzSAGt378UvYUCugOAehYl5O3p6PPNCogOAAHT76PPbw4AJeTdO9AmSgDPhDgEeQ3+J+Cd2tYhV9vePANqB5h9HgSQHcCu/KMraVfBZgRDABlUe/JJBfRUrYxYqYAMqj35pAJ6qlZGrFRABtWefP4CGiNiQQmwx+IAAAAASUVORK5CYII=" width="64" height="64">
 						</span>
-						<h2>Phrase <strong>d'accroche</strong>
+						<h2><strong>L’Échappé Maya</strong> est un défi aux agents de voyage
+							<br>qui pourront remporter un voyage incroyable au Mexique d'accroche
 						</h2>
-						<p>Courte  <strong>Description</strong> de
-						<br />
-					l'évenement<strong>bla</strong>,
-						</p>
+						<p>Testez vos connaissances et participez pour gagner !</p>
+<p>Inscrivez-vous pour participer et répondre au questionnaire.<br>N’oubliez pas de lire les informations de nos partenaires.</p>
+<p>L’aventure commence maintenant, et sera ouverte jusqu'au dimanche <strong>30 Avril 2017</strong>.<br>Les <strong>40 gagnants</strong> seront annoncés dans la première semaine du mois de Mai.</p>
+
+<p>Cette échappée sans précédents est un effort conjoint entre Empreinte, AM Resorts, XL Airways et le<br>Conseil de Promotion Touristique du Mexique.<br>
+	Bonne chance!</p>
 					</header>
 
 					<!-- One -->

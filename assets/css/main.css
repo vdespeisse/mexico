@@ -2428,21 +2428,21 @@
 			color: #fff;
 			display: inline-block;
 			opacity: 0;
-			padding: 3em;
+			padding: 2em;
 			text-align: center;
 		}
 
 			#banner .inner header {
 				display: inline-block;
-				border-bottom: solid 2px;
-				border-top: solid 2px;
+				/*border-bottom: solid 2px;
+				border-top: solid 2px;*/
 				margin: 0 0 2em 0;
 				padding: 3px 0 3px 0;
 			}
 
 				#banner .inner header h2 {
-					border-bottom: solid 2px;
-					border-top: solid 2px;
+					/*border-bottom: solid 2px;
+					border-top: solid 2px;*/
 					font-size: 2.5em;
 					font-weight: 900;
 					letter-spacing: 0.2em;
@@ -2495,7 +2495,7 @@
 			}
 
 	body.index #main {
-		padding-top: 5em;
+		padding-top: 3em;
 	}
 
 /* CTA */
@@ -2819,7 +2819,7 @@
 					}
 
 			body.index #main {
-				padding-top: 4.5em;
+				padding-top: 2.5em;
 			}
 
 		/* CTA */
@@ -3160,7 +3160,7 @@
 			}
 
 			body.index #main {
-				padding: 2.5em 0 0 0;
+				padding: 1.2em 0 0 0;
 			}
 
 			body.contact #main {

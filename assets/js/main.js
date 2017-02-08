@@ -19,7 +19,8 @@
 		var	$window = $(window),
 			$body = $('body'),
 			$header = $('#header'),
-			$banner = $('#banner');
+			$banner = $('#banner'),
+			$iconlist = $('#iconlist');
 
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
@@ -105,13 +106,30 @@
 						delay:		0,
 						range:		1,
 						anchor:		'top',
-						on:			function() { $header.addClass('alt reveal'); },
-						off:		function() { $header.removeClass('alt'); }
+						on:			function() { $header.addClass('alt reveal');$iconlist.removeClass('lower'); },
+						off:		function() { $header.removeClass('alt');$iconlist.addClass('lower'); }
 					});
 
 				});
 
 			}
+			// if (!skel.vars.mobile
+			// &&	$iconlist.hasClass('landing')
+			// &&	$banner.length > 0) {
+			//
+			// 	$window.on('load', function() {
+			//
+			// 		$banner.scrollwatch({
+			// 			delay:		0,
+			// 			range:		1,
+			// 			anchor:		'top',
+			// 			on:			function() { ; },
+			// 			off:		function() {  }
+			// 		});
+			//
+			// 	});
+			//
+			// }
 
 	});
 
