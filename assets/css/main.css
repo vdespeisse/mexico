@@ -11,6 +11,7 @@
 :root{
 	/*--accent:#83d3c9;*/
 	--accent:#81C61C;
+	--accent-light:#9BE036;
 }
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
@@ -2077,8 +2078,8 @@
 			input[type="submit"].special:hover,
 			input[type="reset"].special:hover,
 			.button.special:hover {
-				background: #96dad1 !important;
-				border-color: #96dad1 !important;
+				background: var(--accent-light) !important;
+				border-color: var(--accent-light) !important;
 			}
 
 		input[type="button"].fit,
@@ -2229,7 +2230,7 @@
 					border: solid 1px transparent;
 					color: inherit;
 					display: inline-block;
-					line-height: 1em;
+					line-height: 1.2em;
 					padding: 0.6em 0.75em;
 					text-decoration: none;
 				}
@@ -3207,7 +3208,8 @@
 	}
 
 #logo {
-	height:34px;
+	height:46px;
+	margin-top:-8px;
 }
 .icon img {
 	max-height:50px;
@@ -3215,4 +3217,7 @@
 .nodecoration {
 	text-decoration: none;
 	border-bottom:none;
+}
+#header nav ul li {
+	vertical-align: middle;
 }

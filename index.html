@@ -5,17 +5,18 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Twenty by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
-	</head>
-	<style>
+
+<head>
+	<title>Twenty by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+</head>
+<style>
 	/*:root{
 	  --red: #FD000D;
 	  --red-dark; #B7000A;
@@ -30,143 +31,244 @@
 	  --blue: #00999A;
 	  --blue-dark: #00656A;
 	}*/
+
 	#header {
 		/*color:#B7000A!important;*/
 		/*background: rgba(52, 27, 43, 0.6)!important;*/
 		/*background: rgba(129, 198, 28, 0.7)!important;*/
 	}
+
 	.button.special {
-		background-color:#81C61C;
+		background-color: #81C61C;
 	}
+
 	#banner {
 		transition: all 0.5s ease-in;
 	}
+
 	.slider-buttons {
 		padding: 4em 0 1em 0;
-		color:hotpink;
+		color: hotpink;
 	}
+
 	.slider-buttons img {
-		margin-left:3px;
-		border-radius:12px;
+		margin-left: 3px;
+		border-radius: 12px;
 		border: solid 1px transparent;
-		cursor:pointer;
-
+		cursor: pointer;
 	}
-	.slider-buttons img.active {
 
+	.slider-buttons img.active {
 		border: solid 1px white;
 	}
 
 	.center {
-		text-align:center;
+		text-align: center;
 	}
+
 	.lower {
-		margin-top:2em;
+		margin-top: 2em;
 	}
-	section#iconlist{
+
+	section#iconlist {
 		margin-bottom: 0;
-		transition:margin 0.1s ease;
+		transition: margin 0.1s ease;
 	}
-	</style>
-	<body class="index">
-		<div id="page-wrapper">
 
-			<!-- Header -->
-				<header id="header" class="alt">
-					<a class="nodecoration" href="http://www.visitmexico.com/fr/"/><img id="logo" src="images/logo.png"></img></a>
-					<nav id="nav">
+	.modal {
+		display: none;
+		/* Hidden by default */
+		position: fixed;
+		/* Stay in place */
+		z-index: 1;
+		/* Sit on top */
+		padding-top: 100px;
+		/* Location of the box */
+		left: 0;
+		top: 0;
+		width: 100%;
+		/* Full width */
+		height: 100%;
+		/* Full height */
+		overflow: auto;
+		/* Enable scroll if needed */
+		background-color: rgb(0, 0, 0);
+		/* Fallback color */
+		background-color: rgba(0, 0, 0, 0.4);
+		/* Black w/ opacity */
+	}
+	/* Modal Content */
+
+	.modal-content {
+		position: relative;
+		background-color: #fefefe;
+		margin: auto;
+		padding: 0;
+		border: 1px solid #888;
+		width: 80%;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		-webkit-animation-name: animatetop;
+		-webkit-animation-duration: 0.4s;
+		animation-name: animatetop;
+		animation-duration: 0.4s
+	}
+	/* The Close Button */
+
+	.close {
+		color: grey;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+	}
+
+	.close:hover,
+	.close:focus {
+		color: #000;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.modal-header {
+		padding: 2px 16px;
+	}
+
+	.modal-body {
+		padding: 2px 16px;
+	}
+</style>
+
+<body class="index">
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+		<div class="modal-header">
+			<span onclick="vm.closeModal()" class="close">&times;</span>
+		</div>
+		<div class="modal-body">
+			<p>Avant de commencer le défi on vous recommande fortement de lire les informations de nos
+				<br>partenaires. Si vous l’avez déjà fait vous êtes prêt à démarrer, bon voyage!</p>
+				<div style="min-height:70px">
+				<ul class="row" style="float:right">
+					<li><a href="#partenaires" class="button" onclick="vm.closeModal()"> Voir les partenaires</a></li>
+					<li><a href="inscription.html" class="button special"> Commencer le quizz</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	</div>
+
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<a class="nodecoration" href="http://www.visitmexico.com/fr/" /><img id="logo" src="images/logo.png"></img>
+			</a>
+			<nav id="nav">
+				<ul>
+					<li class="current"><a href="index.html">Accueil</a></li>
+					<li class="submenu">
+						<a href="#">Partenaires</a>
 						<ul>
-							<li class="current"><a href="index.html">Accueil</a></li>
-							<li class="submenu">
-								<a href="#">Partenaires</a>
-								<ul>
-									<li><a href="xlairways.html">XL Airways</a></li>
-									<li><a href="amresorts.html">AM Resorts</a></li>
-								</ul>
-							</li>
-							<li><a href="inscription.html" class="button special">S'inscrire</a></li>
+							<li><a href="xlairways.html">XL Airways</a></li>
+							<li><a href="amresorts.html">AM Resorts</a></li>
+							<li><a href="empreinte.html">Empreinte</a></li>
+							<li><a href="mexique.html">Mexique</a></li>
 						</ul>
-					</nav>
-				</header>
-			<!-- Banner -->
-				<section id="banner" :style="{ 'background-image': current_bg}">
+					</li>
+					<li><a class="button special" @click="openModal()">Participer</a></li>
+				</ul>
+			</nav>
+		</header>
 
-					<!--
+		<!-- Banner -->
+		<section id="banner" :style="{ 'background-image': current_bg}">
+
+			<!--
 						".inner" is set up as an inline-block so it automatically expands
 						in both directions to fit whatever's inside it. This means it won't
 						automatically wrap lines, so be sure to use line breaks where
 						appropriate (<br />).
 					-->
-					<div class="inner">
+			<div class="inner">
 
-						<div style="border:5px solid white; padding: 1em">
-						<header>
-							<h2>L'éCHAPéE MAYA</h2>
-						</header>
-						<p>Bienvenue à <strong>l'aventure</strong> au
-						<br />
-						Mexique
+				<div style="border:5px solid white; padding: 1em">
+					<header>
+						<h2>L'éCHAPéE MAYA</h2>
+					</header>
+					<p>Bienvenue à <strong>l'aventure</strong> au
+						<br /> Mexique
 						<br />
 						<!-- by <a href="http://html5up.net">HTML5 UP</a>.</p> -->
 						<footer>
 							<ul class="buttons vertical">
-								<li><a href="#main" class="button fit scrolly">En savoir plus</a></li>
+								<li><a href="#main" class="button scrolly">En savoir plus</a></li>
 							</ul>
 						</footer>
-						</div>
+				</div>
+			</div>
+			<div class="slider-buttons">
+				<img :class="{ active: currentIndex===0}" @click="force_slider(0)" src="images/slider/b_rojo.png"></img>
+				<img :class="{ active: currentIndex===1}" @click="force_slider(1)" src="images/slider/b_rosa.png"></img>
+				<img :class="{ active: currentIndex===2}" @click="force_slider(2)" src="images/slider/b_naranja.png"></img>
+				<img :class="{ active: currentIndex===3}" @click="force_slider(3)" src="images/slider/b_morado.png"></img>
+				<img :class="{ active: currentIndex===4}" @click="force_slider(4)" src="images/slider/b_verde.png"></img>
+				<img :class="{ active: currentIndex===5}" @click="force_slider(5)" src="images/slider/b_azul.png"></img>
+			</div>
+
+		</section>
+
+		<!-- Main -->
+		<article id="main">
+			<section id="iconlist" class="wrapper style1 container special">
+				<div class="row center">
+					<div class="3u">
+						<span class="icon"><img src="images/xl_airways/logo.png"></img>
+							</span>
 					</div>
-					<div class="slider-buttons">
-						<img :class="{ active: currentIndex===0}" @click="force_slider(0)" src="images/slider/b_rojo.png"></img>
-						<img :class="{ active: currentIndex===1}" @click="force_slider(1)" src="images/slider/b_rosa.png"></img>
-						<img :class="{ active: currentIndex===2}" @click="force_slider(2)" src="images/slider/b_naranja.png"></img>
-						<img :class="{ active: currentIndex===3}" @click="force_slider(3)" src="images/slider/b_morado.png"></img>
-						<img :class="{ active: currentIndex===4}" @click="force_slider(4)" src="images/slider/b_verde.png"></img>
-						<img :class="{ active: currentIndex===5}" @click="force_slider(5)" src="images/slider/b_azul.png"></img>
-
+					<div class="3u">
+						<span class="icon"><img src="images/amresorts/logo.png"></img>
+							</span>
 					</div>
-
-				</section>
-
-			<!-- Main -->
-				<article id="main">
-						<section id="iconlist" class="wrapper style1 container special">
-					<div class="row center">
-						<div class="3u">
-							<span class="icon"><img src="images/xl_airways/logo.png"></img>
+					<div class="3u">
+						<span class="icon"><img src="images/empreinte/logo.jpg"></img>
 							</span>
-						</div>
-						<div class="3u">
-							<span class="icon"><img src="images/amresorts/logo.png"></img>
-							</span>
-						</div>
-						<div class="3u">
-							<span class="icon"><img src="images/empreinte/logo.jpg"></img>
-							</span>
-						</div>
-						<div class="3u">
-							<span class="icon"><img src="images/logo.png"></img>
-							</span>
-						</div>
 					</div>
-				</section>
+					<div class="3u">
+						<span class="icon"><img src="images/logo.png"></img>
+							</span>
+					</div>
+				</div>
+			</section>
 
-					<header class="special container">
-						<!-- <span class="icon fa-bar-chart-o"></span> -->
-						<span class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABtUlEQVR4Xu2Y4XHCMAyFlQ26AhuxCSuUCcoIHY0NGKE9jvQO1CTPQpIdnx8/E50sfXqSRSYZ/DcNnr8QABUwOAG2wOAC4BBkC7AFBifAFggUwE+grxJXIcULcTJHSwAlZQu0CSleiBMq4EFAt0Ak3DT/kUESgOrvZ7hfInKc33+LyHllFmzZpQCuoYCLiJxUwncAn+oZsusWwE1EPlSyVxE5qGfIrlsAa/uBVh+yI4CNGfP2elFjBqDK/gWP7HajgNorr7W6pqKajBttfARgJGAqqsmYCnhv57cOr2z7F0FFKAD5yE7I6r85AGNLw0/3BOBZkJB8l/6HWyvY2n4zRwIoKE/05oegVz0PBZPRAujM3QNACWhReRPynhc+A7wBFXSd66o2XYslyZgcLmRHBVhL7rnXrZ/nlxTgrRjKF6mu6vkEkNCzSAGt378UvYUCugOAehYl5O3p6PPNCogOAAHT76PPbw4AJeTdO9AmSgDPhDgEeQ3+J+Cd2tYhV9vePANqB5h9HgSQHcCu/KMraVfBZgRDABlUe/JJBfRUrYxYqYAMqj35pAJ6qlZGrFRABtWefP4CGiNiQQmwx+IAAAAASUVORK5CYII=" width="64" height="64">
+			<header class="special container">
+				<!-- <span class="icon fa-bar-chart-o"></span> -->
+				<span class="icon">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 290.557 290.557" style="enable-background:new 0 0 290.557 290.557;" xml:space="preserve" width="56px" height="56px">
+					<g>
+						<g>
+							<g>
+								<path d="M277.634,214.509h-8.751l-4.615-18.462h-9.231l-4.615-18.462h-9.231l-4.615-18.462H222.73l-4.615-18.462h-9.231     l-4.615-18.462h-9.231l-4.615-18.462h-12.835V71.432h9.231V43.74H103.74v27.692h9.231v32.308h-12.835l-4.615,18.462H86.29     l-4.615,18.462h-9.231l-4.615,18.462H53.982l-4.615,18.462h-9.231l-4.615,18.462H26.29l-4.615,18.462h-8.751L0,246.817h290.557     L277.634,214.509z M229.366,168.355l2.308,9.231h-43.842l-1.846-9.231H229.366z M210.905,149.894l2.307,9.231H184.14     l-1.846-9.231H210.905z M197.059,131.432l2.307,9.231h-18.918l-1.846-9.231H197.059z M183.212,112.971l2.308,9.231h-8.765     l-1.846-9.231H183.212z M112.971,52.971h64.615v9.231h-64.615V52.971z M125.456,209.894l0.462-4.615h38.723l0.461,4.615H125.456z      M166.025,219.125l0.461,4.615h-42.415l0.462-4.615H166.025z M126.84,196.048l0.462-4.615h35.954l0.462,4.615H126.84z      M154.947,108.356l0.462,4.615h-20.262l0.462-4.615H154.947z M140.663,99.125v-9.231h9.231v9.231H140.663z M156.333,122.202     l0.461,4.615h-23.031l0.462-4.615H156.333z M157.717,136.048l0.462,4.615h-25.801l0.462-4.615H157.717z M159.102,149.894     l0.461,4.615h-28.569l0.462-4.615H159.102z M160.487,163.74l0.461,4.615H129.61l0.462-4.615H160.487z M161.871,177.587     l0.461,4.615h-34.108l0.462-4.615H161.871z M159.124,99.124V80.663h-27.692v18.462h-9.231V71.432h46.154v27.692H159.124z      M107.345,112.971h8.303l-1.846,9.231h-8.765L107.345,112.971z M93.498,131.432h18.457l-1.846,9.231H91.191L93.498,131.432z      M79.652,149.894h28.611l-1.846,9.231H77.345L79.652,149.894z M61.191,168.355h43.38l-1.846,9.231H58.883L61.191,168.355z      M90.725,237.586H13.634l5.538-13.846h74.322L90.725,237.586z M97.186,205.278l-1.846,9.231H31.191l2.307-9.231h14.857v-9.231     h-3.318l2.308-9.231h53.534l-1.846,9.231H76.048v9.231H97.186z M100.14,237.586l25.846-129.231h0.346l-12.923,129.231H100.14z      M122.687,237.586l0.461-4.615h44.262l0.462,4.615H122.687z M177.148,237.586l-12.923-129.231h0.346l25.846,129.231H177.148z      M189.679,186.817h53.534l2.307,9.231h-53.995L189.679,186.817z M193.371,205.278h63.688l2.307,9.231h-64.149L193.371,205.278z      M199.832,237.586l-2.769-13.846h74.322l5.538,13.846H199.832z" fill="#7c8081"/>
+								<rect x="57.586" y="196.048" width="9.231" height="9.231" fill="#7c8081"/>
+							</g>
+						</g>
+					</g>
+				</svg>
 						</span>
-						<h2><strong>L’Échappé Maya</strong> est un défi aux agents de voyage
+				<h2><strong>L’Échappé Maya</strong> est un défi aux agents de voyage
 							<br>qui pourront remporter un voyage incroyable au Mexique d'accroche
 						</h2>
-						<p>Testez vos connaissances et participez pour gagner !</p>
-<p>Inscrivez-vous pour participer et répondre au questionnaire.<br>N’oubliez pas de lire les informations de nos partenaires.</p>
-<p>L’aventure commence maintenant, et sera ouverte jusqu'au dimanche <strong>30 Avril 2017</strong>.<br>Les <strong>40 gagnants</strong> seront annoncés dans la première semaine du mois de Mai.</p>
+				<p>Testez vos connaissances et participez pour gagner !</p>
+				<p>Inscrivez-vous pour participer et répondre au questionnaire.<br>N’oubliez pas de lire les informations de nos partenaires.</p>
+				<p>L’aventure commence maintenant, et sera ouverte jusqu'au dimanche <strong>30 Avril 2017</strong>.<br>Les <strong>40 gagnants</strong> seront annoncés dans la première semaine du mois de Mai.</p>
 
-<p>Cette échappée sans précédents est un effort conjoint entre Empreinte, AM Resorts, XL Airways et le<br>Conseil de Promotion Touristique du Mexique.<br>
-	Bonne chance!</p>
-					</header>
+				<p>Cette échappée sans précédents est un effort conjoint entre Empreinte, AM Resorts, XL Airways et le<br>Conseil de Promotion Touristique du Mexique.<br> Bonne chance!</p>
+				<div class="button special" @click="openModal()">Participer au quizz</div>
+			</header>
 
-					<!-- One -->
-						<!-- <section class="wrapper style2 container special-alt">
+			<!-- One -->
+			<!-- <section class="wrapper style2 container special-alt">
 							<div class="row 50%">
 								<div class="8u 12u(narrower)">
 
@@ -196,8 +298,8 @@
 							</div>
 						</section> -->
 
-					<!-- Two -->
-						<!-- <section class="wrapper style1 container special">
+			<!-- Two -->
+			<!-- <section class="wrapper style1 container special">
 							<div class="row">
 								<div class="4u 12u(narrower)">
 
@@ -235,160 +337,201 @@
 							</div>
 						</section> -->
 
-					<!-- Three -->
-						<section class="wrapper style3 container special">
+			<!-- Three -->
+			<section class="wrapper style3 container special" id="partenaires">
 
-							<header class="major">
-								<h2>Nos <strong>Partenaires</strong></h2>
+				<header class="major">
+					<h2>Nos <strong>Partenaires</strong></h2>
+				</header>
+
+				<div class="row">
+					<div class="6u 12u(narrower)">
+
+						<section>
+							<a href="xlairways.html" class="image featured"><img src="images/xl_airways/image1.jpg" alt="" /></a>
+							<header>
+								<h3>XL Airways</h3>
 							</header>
-
-							<div class="row">
-								<div class="6u 12u(narrower)">
-
-									<section>
-										<a href="xlairways.html" class="image featured"><img src="images/xl_airways/image1.jpg" alt="" /></a>
-										<header>
-											<h3>XL Airways</h3>
-										</header>
-										<p>Courte description xl airways: env 50mots</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="xlairways.html" class="button small">En savoir plus</a></li>
-											</ul>
-										</footer>
-									</section>
-
-								</div>
-								<div class="6u 12u(narrower)">
-
-									<section>
-										<a href="amresorts.html" class="image featured"><img src="images/amresorts/image1.jpg" alt="" /></a>
-										<header>
-											<h3>AM Resorts</h3>
-										</header>
-										<p>La collection AMResorts représente 51 hôtels et 19 221 chambres proposant des séjours  en  tout inclus sur 6 destinations (République Dominicaine, Mexique, Costa Rica, Panama, Jamaïque et Curaçao). Chaque établissement est situé le long des plus belles plages des caraïbes et d’Amérique Latine, offrant prestation de grande qualité en tout inclus, chambres et suites luxueuses, spa de renommée, restaurants gastronomiques, animations et bien plus encore… </p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="amresorts.html" class="button small">En savoir plus</a></li>
-											</ul>
-										</footer>
-									</section>
-
-								</div>
-							</div>
-							<div class="row">
-								<div class="6u 12u(narrower)">
-
-									<section>
-										<a href="partenaire.html" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-										<header>
-											<h3>Partenaire 3</h3>
-										</header>
-										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
-									</section>
-
-								</div>
-								<div class="6u 12u(narrower)">
-
-									<section>
-										<a href="partenaire.html" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-										<header>
-											<h3>Partenaire 4!</h3>
-										</header>
-										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
-									</section>
-
-								</div>
-							</div>
-
-							<footer class="major">
+							<p>CDepuis de nombreuses années, XL Airways France assure des lignes régulières sur de nombreuses destinations dont le Mexique. XL Airways France est la seule compagnie aérienne à relier sans escale Paris à Cancún toute l’année. La compagnie relie
+								Paris Charles de Gaulle (Terminal 2A) à Cancún plusieurs fois par semaine en Airbus A330.</p>
+							<footer>
 								<ul class="buttons">
-									<li><a href="#" class="button">See More</a></li>
+									<li><a href="xlairways.html" class="button small">En savoir plus</a></li>
 								</ul>
 							</footer>
-
 						</section>
 
-				</article>
+					</div>
+					<div class="6u 12u(narrower)">
 
-			<!-- CTA -->
-				<section id="cta">
+						<section>
+							<a href="amresorts.html" class="image featured"><img src="images/amresorts/image1.jpg" alt="" /></a>
+							<header>
+								<h3>AM Resorts</h3>
+							</header>
+							<p>La collection AMResorts représente 51 hôtels et 19 221 chambres proposant des séjours en tout inclus sur 6 destinations (République Dominicaine, Mexique, Costa Rica, Panama, Jamaïque et Curaçao). Chaque établissement est situé le long des plus
+								belles plages des caraïbes et d’Amérique Latine, offrant prestation de grande qualité en tout inclus, chambres et suites luxueuses, spa de renommée, restaurants gastronomiques, animations et bien plus encore… </p>
+							<footer>
+								<ul class="buttons">
+									<li><a href="amresorts.html" class="button small">En savoir plus</a></li>
+								</ul>
+							</footer>
+						</section>
 
-					<header>
-						<h2>Ready to do <strong>something</strong>?</h2>
-						<p>Proin a ullamcorper elit, et sagittis turpis integer ut fermentum.</p>
-					</header>
-					<footer>
-						<ul class="buttons">
-							<li><a href="inscription.html" class="button special">S'INSCRIRE</a></li>
-							<li><a href="#" class="button">Haut de page</a></li>
-						</ul>
-					</footer>
+					</div>
+				</div>
+				<div class="row">
+					<div class="6u 12u(narrower)">
 
-				</section>
+						<section>
+							<a href="empreinte.html" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+							<header>
+								<h3>Empreinte</h3>
+							</header>
+							<p>La production Mexique d’Empreinte est l’une des plus riches du marché français.
+							Les circuits Empreinte présente des originalités comme un nombre restreint de
+							participants, une augmentation de la qualité des prestations qui permet d’allier
+							découverte et détente dans un cadre convivial, et surtout de mieux vivre la
+							destination Mexique.</p>
+							<footer>
+								<ul class="buttons">
+									<li><a href="empreinte.html" class="button small">En savoir plus</a></li>
+								</ul>
+							</footer>
+						</section>
 
-			<!-- Footer -->
-				<footer id="footer">
+					</div>
+					<div class="6u 12u(narrower)">
 
-					<ul class="icons">
-						<li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
-						<li><a href="#" class="icon circle fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribbble</span></a></li>
-					</ul>
+						<section>
+							<a href="partenaire.html" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+							<header>
+								<h3>Mexique</h3>
+							</header>
+							<p>Profitez du soleil, des vagues, des récifs et des cenotes dans la légendaire péninsule
+								du Yucatan. La Riviera Maya s'étend le long de la côte des Caraïbes, dans ce qui était
+								autrefois des villages de pêcheurs et qui est devenue aujourd'hui une région
+								touristique qui propose des hôtels de luxes, des restaurants haut de gamme, des spas
+								exclusifs, des centres commerciaux et des terrains de golf.</p>
+								<footer>
+									<ul class="buttons">
+										<li><a href="empreinte.html" class="button small">En savoir plus</a></li>
+									</ul>
+								</footer>
+						</section>
 
-					<ul class="copyright">
-						<li>&copy; Office du tourisme du mexique</li><li>Design: <a href="https://a4-images.myspacecdn.com/images03/30/8038f94a8b2c4e7aa87a3ad44424a168/300x300.jpg">Un tipo</a></li>
-					</ul>
+					</div>
+				</div>
 
-				</footer>
+			</section>
 
-		</div>
+		</article>
 
-		<!-- Scripts -->
+		<!-- CTA -->
+		<section id="cta">
 
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-			<script >
-			function cycle_images(img_list, currentIndex){
-			  if (currentIndex === img_list.length-1) return {img:img_list[0],currentIndex:0}
-			  return {img:img_list[currentIndex+1],currentIndex:currentIndex+1}
+			<header>
+				<h2>Prêt pour le <strong>quizz</strong>?</h2>
+			</header>
+			<footer>
+				<ul class="buttons">
+					<li><a href="inscription.html" class="button special">Participer au quizz</a></li>
+					<li><a href="#" class="button">Haut de page</a></li>
+				</ul>
+			</footer>
+
+		</section>
+
+		<!-- Footer -->
+		<footer id="footer">
+
+			<ul class="icons">
+				<li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
+				<li><a href="#" class="icon circle fa-github"><span class="label">Github</span></a></li>
+				<li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribbble</span></a></li>
+			</ul>
+
+			<ul class="copyright">
+				<li>&copy; Office du tourisme du mexique</li>
+				<li>Design: <a href="https://a4-images.myspacecdn.com/images03/30/8038f94a8b2c4e7aa87a3ad44424a168/300x300.jpg">Un tipo</a></li>
+			</ul>
+
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollgress.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+	<script>
+		// Get the modal
+		var modal = document.getElementById('myModal');
+
+		// When the user clicks the button, open the modal
+
+
+		// When the user clicks on <span> (x), close the modal
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
 			}
+		}
 
-			var img_list = ["./images/banner1.jpg","./images/banner2.jpg","./images/banner3.jpg","./images/banner1.jpg","./images/banner2.jpg","./images/banner3.jpg"]
+		function cycle_images(img_list, currentIndex) {
+			if (currentIndex === img_list.length - 1) return {
+				img: img_list[0],
+				currentIndex: 0
+			}
+			return {
+				img: img_list[currentIndex + 1],
+				currentIndex: currentIndex + 1
+			}
+		}
 
-			var vm =new Vue({
-			  el: '#page-wrapper',
-			  data: {
-			  current_bg: 'url("./images/banner1.jpg")',
-			  currentIndex: 0,
-			  },
-			  methods: {
-			    auto_cycle() {
-			      var cycle = cycle_images(img_list,this.currentIndex)
-			      console.log(cycle)
-			      this.current_bg = 'url('+cycle.img+')'
-			      console.log(this.current_bg)
-			      this.currentIndex = cycle.currentIndex
-			      setTimeout(this.auto_cycle,8000)
-			    },
-			    force_slider(value) {
-			      this.currentIndex = value
-			      this.current_bg = 'url('+img_list[value]+')'
-			    },
-			  },
-			});
+		var img_list = ["./images/banner1.jpg", "./images/banner2.jpg", "./images/banner3.jpg", "./images/banner4.jpg", "./images/banner5.jpg", "./images/banner6.jpg"]
 
-			setTimeout(vm.auto_cycle,4000)
+		var vm = new Vue({
+			el: '#page-wrapper',
+			data: {
+				current_bg: 'url("./images/banner1.jpg")',
+				currentIndex: 0,
+			},
+			methods: {
+				auto_cycle() {
+					var cycle = cycle_images(img_list, this.currentIndex)
+					console.log(cycle)
+					this.current_bg = 'url(' + cycle.img + ')'
+					console.log(this.current_bg)
+					this.currentIndex = cycle.currentIndex
+					setTimeout(this.auto_cycle, 8000)
+				},
+				force_slider(value) {
+					this.currentIndex = value
+					this.current_bg = 'url(' + img_list[value] + ')'
+				},
+				openModal() {
+					modal.style.display = "block"
+				},
+				closeModal(){
+					modal.style.display = "none"
+				}
+			},
+		});
 
-			</script>
+		setTimeout(vm.auto_cycle, 4000)
+	</script>
 
-	</body>
+</body>
+
 </html>
