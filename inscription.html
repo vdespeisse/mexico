@@ -134,7 +134,7 @@
 						<div class="row">
 							<div class="6u">
 								<ul class="buttons">
-									<li><input type="submit" name="submit" class="button" value="Ne pas participer" /></li>
+									<li><input type="submit" name="submit" class="button" value="Ne pas participer" onclick="javascript:window.open('index.html')"/></li>
 								</ul>
 							</div>
 							<div class="6u" v-show="currentQuestion<questions.length-1">
@@ -145,7 +145,7 @@
 							</div>
 							<div class="6u" v-show="currentQuestion===questions.length-1">
 								<ul class="buttons">
-									<li><input type="submit" name="submit" class="special" value="Fini!" /></li>
+									<li><input type="submit" name="submit" class="special" value="Fini!" onclick="javascript:window.open('fini.html')"/></li>
 								</ul>
 							</div>
 						</div>
@@ -185,55 +185,60 @@
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/quizz.js"></script>
 	<script>
-		var vm = new Vue({
-			el: '#page-wrapper',
-			data() {
-				var questions = []
-				empreinte = shuffle(empreinte)
-				xlairways = shuffle(xlairways)
-				amresorts = shuffle(amresorts)
-				mexique = shuffle(mexique)
-				questions.push(empreinte[0])
-				questions.push(empreinte[1])
-				questions.push(xlairways[0])
-				questions.push(xlairways[1])
-				questions.push(amresorts[0])
-				questions.push(amresorts[1])
-				questions.push(mexique[0])
-				questions.push(mexique[1])
+	"use strict";
 
-				questions = shuffle(questions)
-				return {
-					questions,
-					currentQuestion: 0,
-					score: 0,
-					responses: questions.map(d => false),
-					noQuestionSelected: true,
-					iconColors: questions.map(d => "#CCCCCC")
-				}
+var vm = new Vue({
+el: '#page-wrapper',
+data: function data() {
+	var questions = [];
+	empreinte = shuffle(empreinte);
+	xlairways = shuffle(xlairways);
+	amresorts = shuffle(amresorts);
+	mexique = shuffle(mexique);
+	questions.push(empreinte[0]);
+	questions.push(empreinte[1]);
+	questions.push(xlairways[0]);
+	questions.push(xlairways[1]);
+	questions.push(amresorts[0]);
+	questions.push(amresorts[1]);
+	questions.push(mexique[0]);
+	questions.push(mexique[1]);
 
-			},
-			methods: {
-				log(val) {
-					console.log(val)
-				},
-				nextQuestion(){
-					// if (this.noQuestionSelected) return
-					if (this.responses[this.currentQuestion]) this.iconColors[this.currentQuestion] = "#000000"
-					this.currentQuestion+=1
-					this.noQuestionSelected = true
-				},
-				updateResponses(index,correct) {
-					this.responses[index] = correct
-					this.score =  this.responses.filter(d => d).length
-					this.noQuestionSelected = false
-					}
-			},
-			watch: {
+	questions = shuffle(questions);
+	return {
+		questions: questions,
+		currentQuestion: 0,
+		score: 0,
+		responses: questions.map(function (d) {
+			return false;
+		}),
+		noQuestionSelected: true,
+		iconColors: questions.map(function (d) {
+			return "#CCCCCC";
+		})
+	};
+},
 
-
-			}
-		});
+methods: {
+	log: function log(val) {
+		console.log(val);
+	},
+	nextQuestion: function nextQuestion() {
+		// if (this.noQuestionSelected) return
+		if (this.responses[this.currentQuestion]) this.iconColors[this.currentQuestion] = "#000000";
+		this.currentQuestion += 1;
+		this.noQuestionSelected = true;
+	},
+	updateResponses: function updateResponses(index, correct) {
+		this.responses[index] = correct;
+		this.score = this.responses.filter(function (d) {
+			return d;
+		}).length;
+		this.noQuestionSelected = false;
+	}
+},
+watch: {}
+});
 	</script>
 
 </body>
