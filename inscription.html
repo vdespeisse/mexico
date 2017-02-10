@@ -77,7 +77,7 @@
 		<!-- Main -->
 		<article id="main">
 			<header class="container center">
-			<h2> Enregistrement </h2>
+			<h2 v-show="showForm"> Enregistrement </h2>
 		</header>
 			<!-- One -->
 			<form id="formulaire" action="https://docs.google.com/forms/d/e/1FAIpQLSejg1x4YpLDFQLMOpEhBku0ShZ0a2724RK8RWE7HWCrJMErMA/formResponse?embedded=true" method="POST" target="hiddenFrame" onsubmit="javascsript:window.location.href = 'fini.html'">
@@ -264,6 +264,7 @@
 					showQuizz: false,
 					showForm:true,
 					progressRatio: "0%",
+					loaded:false,
 				}
 
 			},
