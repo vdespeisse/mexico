@@ -44,6 +44,34 @@
 	#page-wrapper {
 		background-size: cover!important;
 	}
+	.quizz-icon img {
+		width:64px;
+		height:64px;
+	}
+	.nopadding {
+		margin:0;
+		padding:0;
+		padding-left:5px;
+	}
+	.row.nopadding > * {
+		padding:0;
+	}
+	.row.nopadding {
+		margin:auto;
+	}
+	.default svg path {
+		fill:#CCCCCC!important;
+		stroke:#CCCCCC!important;
+	}
+	.right svg path {
+		fill:#81C61C!important;
+		stroke:#81C61C!important;
+	}
+	.wrong svg path {
+		fill:#B7000A!important;
+		stroke:#B7000A!important;
+	}
+
 
 	</style>
 	<script>
@@ -144,7 +172,7 @@
 						</div>
 						<div style="margin-top:1.5em">
 						<div class="6u" style="margin:auto">
-							<ul class="buttons">
+							<ul class="buttons center">
 								<li><a href="#" class="button special" @click="showQuizz = true;showForm=false" >Valider</a></li>
 							</ul>
 						</div>
@@ -153,14 +181,25 @@
 
 
 												<!-- QUIZZ -->
-						<section id="quizz" class="wrapper style4 special container 50%" v-show="showQuizz">
-						<div style="margin-top:1em">
+						<section id="quizz" class="wrapper style4 special container 75%" v-show="showQuizz">
+						<div style="margin-top:0em">
 							<!-- <h2 class="center"> Quizz </h2> -->
+							<div class="quizz-icon center" style="margin:auto">
+									<img class="svg" src="images/mayan-numbers/maya.svg"></img>
+							</div>
+							<div class="row nopadding">
+							<div v-for="image,index in mayanNumbers" class="quizz-icon 1u">
+								<img class="svg" :src="image" v-if="currentQuestion<=index"></img>
+								<img class="svg" :src="mayanWrong[index]" v-else-if="!responses[index]"></img>
+								<img class="svg" :src="mayanRight[index]" v-else-if="responses[index]"></img>
+							</div>
+						</div>
+
 							<div class="progress">
 								<div class="progress-bar" :style="{width: progressRatio}">
 								<span></span></div>
 							</div>
-							<div v-for="question,index in questions" v-show="index===currentQuestion">
+							<div v-for="question,index in questions" v-show="index===currentQuestion" style="margin-top:1em">
 								<p>{{ question.text }}</p>
 								<!-- Responses: display a li for each possible response with a radio button -->
 								<ol>
@@ -174,12 +213,12 @@
 						</div>
 						<div>
 							<div class="6u" v-show="currentQuestion<questions.length-1" style="margin:auto">
-								<ul class="buttons">
+								<ul class="buttons center">
 									<li><button type="button" :class="{button:true,  special:true, inactive:noQuestionSelected}" @click="nextQuestion()" >Question suivante</button></li>
 								</ul>
 							</div>
 							<div class="6u" v-show="currentQuestion===questions.length-1" style="margin:auto">
-								<ul class="buttons">
+								<ul class="buttons center">
 									<li><input type="submit" name="btnSubmit" :class="{ special:true, inactive:noQuestionSelected}" value="Fini!"/></li>
 								</ul>
 							</div>
@@ -228,10 +267,12 @@
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/quizz.js"></script>
 	<script>
-	window.onbeforeunload = function (e) {
+	"use strict";
+
+window.onbeforeunload = function (e) {
 	var message = "Etes vous sur de ne pas finir le quizz ?",
-	e = e || window.event;
-	document.querySelector("#formulaire").submit()
+	    e = e || window.event;
+	document.querySelector("#formulaire").submit();
 	// For IE and Firefox
 	if (e) {
 		e.returnValue = message;
@@ -240,82 +281,94 @@
 	// For Safari
 	return message;
 };
-		var vm = new Vue({
-			el: '#page-wrapper',
-			data() {
-				var questions = []
-				empreinte = shuffle(empreinte)
-				xlairways = shuffle(xlairways)
-				amresorts = shuffle(amresorts)
-				mexique = shuffle(mexique)
-				questions.push(empreinte[0])
-				questions.push(empreinte[1])
-				questions.push(xlairways[0])
-				questions.push(xlairways[1])
-				questions.push(amresorts[0])
-				questions.push(amresorts[1])
-				questions.push(mexique[0])
-				questions.push(mexique[1])
-				questions.push(mexique[2])
-				questions.push(mexique[3])
+var vm = new Vue({
+	el: '#page-wrapper',
+	data: function data() {
+		var questions = [];
+		empreinte = shuffle(empreinte);
+		xlairways = shuffle(xlairways);
+		amresorts = shuffle(amresorts);
+		mexique = shuffle(mexique);
+		questions.push(empreinte[0]);
+		questions.push(empreinte[1]);
+		questions.push(xlairways[0]);
+		questions.push(xlairways[1]);
+		questions.push(amresorts[0]);
+		questions.push(amresorts[1]);
+		questions.push(mexique[0]);
+		questions.push(mexique[1]);
+		questions.push(mexique[2]);
+		questions.push(mexique[3]);
 
+		questions = shuffle(questions);
+		return {
+			questions: questions,
+			currentQuestion: 0,
+			score: "NA",
+			responses: questions.map(function (d) {
+				return false;
+			}),
+			noQuestionSelected: true,
+			iconColors: questions.map(function (d) {
+				return "#CCCCCC";
+			}),
+			showQuizz: false,
+			showForm: true,
+			progressRatio: "0%",
+			loaded: false,
+			currentBackground: "#f3f6fa",
+			mayanNumbers: ["images/mayan-numbers/Maya_1.svg", "images/mayan-numbers/Maya_2.svg", "images/mayan-numbers/Maya_3.svg", "images/mayan-numbers/Maya_4.svg", "images/mayan-numbers/Maya_5.svg", "images/mayan-numbers/Maya_6.svg", "images/mayan-numbers/Maya_7.svg", "images/mayan-numbers/Maya_8.svg", "images/mayan-numbers/Maya_9.svg", "images/mayan-numbers/Maya_10.svg"],
+			mayanWrong: ["images/mayan-numbers/wrong/Maya_1.svg", "images/mayan-numbers/wrong/Maya_2.svg", "images/mayan-numbers/wrong/Maya_3.svg", "images/mayan-numbers/wrong/Maya_4.svg", "images/mayan-numbers/wrong/Maya_5.svg", "images/mayan-numbers/wrong/Maya_6.svg", "images/mayan-numbers/wrong/Maya_7.svg", "images/mayan-numbers/wrong/Maya_8.svg", "images/mayan-numbers/wrong/Maya_9.svg", "images/mayan-numbers/wrong/Maya_10.svg"],
+			mayanRight: ["images/mayan-numbers/right/Maya_1.svg", "images/mayan-numbers/right/Maya_2.svg", "images/mayan-numbers/right/Maya_3.svg", "images/mayan-numbers/right/Maya_4.svg", "images/mayan-numbers/right/Maya_5.svg", "images/mayan-numbers/right/Maya_6.svg", "images/mayan-numbers/right/Maya_7.svg", "images/mayan-numbers/right/Maya_8.svg", "images/mayan-numbers/right/Maya_9.svg", "images/mayan-numbers/right/Maya_10.svg"]
+		};
+	},
 
-				questions = shuffle(questions)
-				return {
-					questions,
-					currentQuestion: 0,
-					score: "NA",
-					responses: questions.map(d => false),
-					noQuestionSelected: true,
-					iconColors: questions.map(d => "#CCCCCC"),
-					showQuizz: false,
-					showForm:true,
-					progressRatio: "0%",
-					loaded:false,
-					currentBackground: "#f3f6fa",
-				}
-
-			},
-			methods: {
-				log(val) {
-					console.log(val)
-				},
-				nextQuestion(){
-					// if (this.noQuestionSelected) return
-					if (this.responses[this.currentQuestion]) this.iconColors[this.currentQuestion] = "#000000"
-					this.currentQuestion+=1
-					this.progressRatio = this.currentQuestion / 10 *100 +'%'
-					this.noQuestionSelected = true
-				},
-				updateResponses(index,correct) {
-					this.responses[index] = correct
-					this.score =  this.responses.filter(d => d).length
-					this.noQuestionSelected = false
-				},
-				checkEndQuizz() {
-					if (this.currentQuestion === this.questions.length-1) {
-						this.score =  this.responses.filter(d => d).length
-						window.onbeforeunload = function(){}
-						this.showForm=true
-						// document.getElementById("quizz").scrollIntoView()
-						setTimeout(() => document.getElementById("quizz").scrollIntoView(),0)
-					}
-				}
-			},
-			computed: {
-				titleText() {
-					if (this.showForm) return "Enregistrement"
-					return "Quizz"
-				},
-				currentBackground() {
-					if (this.showForm) return "#f3f6fa"
-					return 'url("images/background.jpg")'
-				},
-			},
-			watch: {
-				'currentQuestion': 'checkEndQuizz'
+	methods: {
+		log: function log(val) {
+			console.log(val);
+		},
+		nextQuestion: function nextQuestion() {
+			// if (this.noQuestionSelected) return
+			if (this.responses[this.currentQuestion]) this.iconColors[this.currentQuestion] = "#000000";
+			this.currentQuestion += 1;
+			this.progressRatio = this.currentQuestion / 10 * 100 + '%';
+			this.noQuestionSelected = true;
+		},
+		updateResponses: function updateResponses(index, correct) {
+			this.responses[index] = correct;
+			this.score = this.responses.filter(function (d) {
+				return d;
+			}).length;
+			this.noQuestionSelected = false;
+		},
+		checkEndQuizz: function checkEndQuizz() {
+			if (this.currentQuestion === this.questions.length - 1) {
+				this.score = this.responses.filter(function (d) {
+					return d;
+				}).length;
+				window.onbeforeunload = function () {};
+				this.showForm = true;
+				// document.getElementById("quizz").scrollIntoView()
+				setTimeout(function () {
+					return document.getElementById("quizz").scrollIntoView();
+				}, 0);
 			}
-		});
+		}
+	},
+	computed: {
+		titleText: function titleText() {
+			if (this.showForm) return "Enregistrement";
+			return "Quizz";
+		},
+		currentBackground: function currentBackground() {
+			if (this.showForm) return "#f3f6fa";
+			return 'url("images/background.jpg")';
+		}
+	},
+	watch: {
+		'currentQuestion': 'checkEndQuizz'
+	}
+});
 
 
 	</script>
