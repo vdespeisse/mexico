@@ -208,8 +208,8 @@
 					<header>
 						<h2>L'éCHAPéE MAYA</h2>
 					</header>
-					<p>Bienvenue à <strong>l'aventure</strong> au
-						<br /> Mexique
+					<p>Bienvenue à <strong>l'aventure</strong> au Mexique
+						<br />
 						<br />
 						<!-- by <a href="http://html5up.net">HTML5 UP</a>.</p> -->
 						<footer>
@@ -221,11 +221,11 @@
 			</div>
 			<div class="slider-buttons">
 				<img :class="{ active: currentIndex===0}" @click="force_slider(0)" src="images/slider/b_rojo.png"></img>
-				<img :class="{ active: currentIndex===1}" @click="force_slider(1)" src="images/slider/b_rosa.png"></img>
-				<img :class="{ active: currentIndex===2}" @click="force_slider(2)" src="images/slider/b_naranja.png"></img>
-				<img :class="{ active: currentIndex===3}" @click="force_slider(3)" src="images/slider/b_morado.png"></img>
+				<img :class="{ active: currentIndex===1}" @click="force_slider(1)" src="images/slider/b_naranja.png"></img>
+				<img :class="{ active: currentIndex===2}" @click="force_slider(2)" src="images/slider/b_verde.png"></img>
+				<!-- <img :class="{ active: currentIndex===3}" @click="force_slider(3)" src="images/slider/b_morado.png"></img>
 				<img :class="{ active: currentIndex===4}" @click="force_slider(4)" src="images/slider/b_verde.png"></img>
-				<img :class="{ active: currentIndex===5}" @click="force_slider(5)" src="images/slider/b_azul.png"></img>
+				<img :class="{ active: currentIndex===5}" @click="force_slider(5)" src="images/slider/b_azul.png"></img> -->
 			</div>
 
 		</section>
@@ -270,9 +270,13 @@
 				<h2><strong>L’Échappé Maya</strong> est un défi aux agents de voyages
 							<br>qui pourrait finir avec un incroyable voyage au Mexique
 						</h2>
-				<p>Testez vos connaissances et participez pour gagner !</p>
-				<p>Inscrivez-vous pour participer et répondre au questionnaire.<br>N’oubliez pas de lire les informations de nos partenaires.</p>
-				<p>L’aventure commence maintenant, et sera ouverte jusqu'au dimanche <strong>30 Avril 2017</strong>.<br>Les <strong>40 gagnants</strong> seront annoncés dans la première semaine du mois de Mai.</p>
+						<p></p>
+				<p>Testez vos connaissances et participez !<br>
+				N’oubliez pas de lire les informations de nos partenaires.</p>
+
+				<p>L’aventure commence maintenant, et sera ouverte jusqu'au dimanche <strong>30 Avril 2017</strong>.<br>
+					Les <strong>40 voyageurs</strong> seront annoncés dans la première semaine du mois de Mai.<br>N’oubliez pas de lire les informations de nos partenaires.
+				</p>
 
 				<p>Cette échappée sans précédents est un effort conjoint entre Empreinte, AM Resorts, XL Airways et le<br>Conseil de Promotion Touristique du Mexique.<br> Bonne chance!</p>
 				<div class="button special" @click="openModal()">Participer au quizz</div>
@@ -454,6 +458,7 @@
 		<!-- Footer -->
 		<footer id="footer">
 
+			<p style="color:#F0027F"> <strong>Nous vous attendons nombreux au troisième Cycle de Séminaires-Workshops le prochain mardi 6 juin à Lyon et jeudi 8 juin à Paris, réservez les dates.</strong> </p>
 			<ul class="icons">
 				<li><a href="https://www.youtube.com/VisitMex" class="icon circle fa-youtube" target="_blank"><span class="label">Youtube</span></a></li>
 				<li><a href="https://www.instagram.com/visitmexico/" class="icon circle fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
@@ -462,7 +467,6 @@
 			<ul class="copyright">
 				<li>&copy; Conseil de Promotion Touristique du Mexique</li><li>Design: <a href="mailto:v.despeisse@gmail.com" target="_top"> Vincent Despeisse </a>& <a href="http://html5up.net">HTML5 UP</a> </li>
 			</ul>
-			<p> Nous vous attendons nombreux au troisième Cycle de Séminaires-Workshops le prochain mardi 6 juin à Lyon et jeudi 8 juin à Paris, réservez les dates. </p>
 
 		</footer>
 
@@ -500,7 +504,7 @@
 			}
 		}
 
-		var img_list = ["./images/banner1.jpg", "./images/banner2.jpg", "./images/banner3.jpg","./images/banner1.jpg", "./images/banner2.jpg", "./images/banner3.jpg"]
+		var img_list = ["./images/banner1.jpg", "./images/banner2.jpg", "./images/banner3.jpg"]
 
 		var vm = new Vue({
 			el: '#page-wrapper',
