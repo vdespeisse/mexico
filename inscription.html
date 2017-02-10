@@ -38,6 +38,9 @@
 		height:100%;
 		transition:all 0.3s ease;
 	}
+	[v-cloak] {
+  display: none;
+	}
 
 	</style>
 	<script>
@@ -50,7 +53,7 @@
   ga('send', 'pageview');
 
 </script>
-	<div id="page-wrapper">
+	<div id="page-wrapper" v-cloak>
 
 		<!-- Header -->
 		<header id="header">
@@ -77,7 +80,8 @@
 		<!-- Main -->
 		<article id="main">
 			<header class="container center">
-			<h2 v-show="showForm"> Enregistrement </h2>
+			<h2 v-show="showForm"> Inscription </h2>
+			<h2 v-show="!showForm"> Quizz </h2>
 		</header>
 			<!-- One -->
 			<form id="formulaire" action="https://docs.google.com/forms/d/e/1FAIpQLSejg1x4YpLDFQLMOpEhBku0ShZ0a2724RK8RWE7HWCrJMErMA/formResponse?embedded=true" method="POST" target="hiddenFrame" onsubmit="javascsript:window.location.href = 'fini.html'">
@@ -138,7 +142,7 @@
 						<div style="margin-top:1.5em">
 						<div class="6u" style="margin:auto">
 							<ul class="buttons">
-								<li><a href="#quizz" class="button special" @click="showQuizz = true;showForm=false" >Valider</a></li>
+								<li><a href="#" class="button special" @click="showQuizz = true;showForm=false" >Valider</a></li>
 							</ul>
 						</div>
 					</div>
@@ -147,8 +151,8 @@
 
 												<!-- QUIZZ -->
 						<section id="quizz" class="wrapper style4 special container 50%" v-show="showQuizz">
-						<div style="margin-top:1.5em">
-							<h2 class="center"> Quizz </h2>
+						<div style="margin-top:1em">
+							<!-- <h2 class="center"> Quizz </h2> -->
 							<div class="progress">
 								<div class="progress-bar" :style="{width: progressRatio}">
 								<span></span></div>
