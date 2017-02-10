@@ -124,7 +124,7 @@ empreinte = [
 
 mexique = [
           {
-            text: "Concernant les nuits d’hôtels, quelle est la capacité d’accueil à la Riviera Maya ?",
+            text: "Concernant les nuitées, quelle est la capacité d’accueil à la Riviera Maya ?",
             responses: [
               {text: '10,000 chambres '},
               {text: '35,000 chambres'},
@@ -132,7 +132,7 @@ mexique = [
             ]
           },
           {
-            text: "Combien de vols atterrissent chaque mois à l’aéroport international de Cancun ?",
+            text: "Combien de vols mensuels arrivent à l’aéroport international de Cancún ?",
             responses: [
               {text: '4,500 vols mensuels', correct: true},
               {text: '3,000 vols mensuels'},
@@ -150,7 +150,7 @@ mexique = [
           {
             text: "D'un point de vue géographique, le long la côte est plat à l'exception de quel site archéologique ?",
             responses: [
-              {text: 'Tulum', correct: true},
+              {text: 'Tulúm', correct: true},
               {text: 'Akumal'},
               {text: 'Coba'},
             ]

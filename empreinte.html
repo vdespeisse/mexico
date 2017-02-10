@@ -27,16 +27,16 @@
 
 			<!-- Header -->
 			<header id="header">
-				<a class="nodecoration" href="http://www.visitmexico.com/fr/"/><img id="logo" src="images/logo.png"></img></a>
+				<a class="nodecoration" href="http://www.visitmexico.com/fr/" target="_blank"/><img id="logo" src="images/logo.png"></img></a>
 				<nav id="nav">
 					<ul>
 						<li class="current"><a href="index.html">Accueil</a></li>
 						<li class="submenu">
 							<a href="#">Partenaires</a>
 							<ul>
-								<li><a href="xlairways.html">XL Airways</a></li>
-								<li><a href="amresorts.html">AM Resorts</a></li>
 								<li><a href="empreinte.html">Empreinte</a></li>
+								<li><a href="amresorts.html">AM Resorts</a></li>
+								<li><a href="xlairways.html">XL Airways</a></li>
 								<li><a href="mexique.html">Mexique</a></li>
 							</ul>
 						</li>
@@ -72,7 +72,7 @@
 												destination Mexique.</p>
 											<footer>
 												<ul class="buttons">
-													<li><a href="http://www.empreinte.to/" class="button small">Leur site</a></li>
+													<li><a href="http://www.empreinte.to/" class="button small" target="_blank">Site Web</a></li>
 												</ul>
 											</footer>
 										</section>
@@ -99,7 +99,7 @@
 								<!-- Content -->
 									<div class="content">
 										<section>
-											<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+											<a href="#" class="image featured"><img :src="currentImg" alt="" /></a>
 											<header>
 
 											</header>
@@ -155,12 +155,12 @@
 					  return {img:img_list[currentIndex+1],currentIndex:currentIndex+1}
 					}
 
-					var img_list = ["./images/xl_airways/image1.jpg","./images/xl_airways/image2.jpg","./images/xl_airways/image3.jpg","./images/xl_airways/image1.jpg","./images/xl_airways/image2.jpg","./images/xl_airways/image3.jpg"]
+					var img_list = ["./images/empreinte/image1.jpg","./images/empreinte/image2.jpg","./images/empreinte/image3.jpg","./images/empreinte/image4.jpg"]
 
 					var vm =new Vue({
 					  el: '#page-wrapper',
 					  data: {
-					  currentImg: "./images/xl_airways/image1.jpg",
+					  currentImg: "./images/empreinte/image1.jpg",
 					  currentIndex: 0,
 					  },
 					  methods: {

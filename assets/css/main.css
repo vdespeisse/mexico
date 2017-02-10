@@ -1673,7 +1673,7 @@
 			opacity: 0.1;
 			position: absolute;
 			top: 1.75em;
-			width: 43%;
+			width: 37%;
 		}
 
 		header.special:before {
@@ -2731,7 +2731,7 @@
 			}
 
 				header.special:before, header.special:after {
-					width: 40%;
+					width: 37%;
 				}
 
 				header.special h2 + p {
@@ -3050,7 +3050,7 @@
 				}
 
 					header.special:before, header.special:after {
-						width: 38%;
+						width: 36%;
 					}
 
 					header.special .icon {
@@ -3136,9 +3136,9 @@
 			}
 
 				#banner .inner {
-					background: none;
+					/*background: none;*/
 					display: block;
-					padding: 0 1.5em;
+					/*padding: 0 1.5em;*/
 				}
 
 					#banner .inner header h2 {
@@ -3220,4 +3220,8 @@
 }
 #header nav ul li {
 	vertical-align: middle;
+}
+
+.center {
+	text-align: center;
 }
