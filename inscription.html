@@ -32,7 +32,6 @@
 		height:1em;
 		position:relative;
 		padding:2px;
-		padding-top:3px;
 	}
 	.progress-bar {
 		background: var(--accent-light);
@@ -71,7 +70,8 @@
 			<h2> Enregistrement </h2>
 		</header>
 			<!-- One -->
-			<section class="wrapper style4 special container 50%" v-show="!showQuizz">
+			<form id="formulaire" action="https://docs.google.com/forms/d/e/1FAIpQLSejg1x4YpLDFQLMOpEhBku0ShZ0a2724RK8RWE7HWCrJMErMA/formResponse?embedded=true" method="POST" target="hiddenFrame" onsubmit="javascsript:window.location.href = 'fini.html'">
+			<section class="wrapper style4 special container 50%" v-show="showForm">
 				<div class="image featured"><img src="images/quizz/pyramid.jpg" alt="" /></div>
 				<p> Inscrivez vous et remplissez le quizz pour avoir une chance de <strong>gagner le voyage</strong> !</p>
 				<p style="font-size: 12pt"> * champs obligatoires </p>
@@ -79,7 +79,6 @@
 				<!-- Content -->
 				<iframe class="hiddenFrame" name="hiddenFrame" style="display: none"></iframe>
 				<div class="content">
-					<form action="https://docs.google.com/forms/d/e/1FAIpQLSejg1x4YpLDFQLMOpEhBku0ShZ0a2724RK8RWE7HWCrJMErMA/formResponse?embedded=true" method="POST" target="hiddenFrame" onsubmit>
 						<div class="row 50%">
 							<div class="9u 12u(mobile)">
 								<label>Nom *</label>
@@ -126,12 +125,20 @@
 												data-initial-value="">
 							</div>
 						</div>
+						<div style="margin-top:1.5em">
+						<div class="6u" style="margin:auto">
+							<ul class="buttons">
+								<li><a href="#quizz" class="button special" @click="showQuizz = true;showForm=false" >Valider</a></li>
+							</ul>
+						</div>
+					</div>
+					</section>
 
 
 												<!-- QUIZZ -->
-						<!-- <section class="wrapper style4 special container 50%" v-show="true"> -->
+						<section id="quizz" class="wrapper style4 special container 50%" v-show="showQuizz">
 						<div style="margin-top:1.5em">
-							<h2> Quizz </h2>
+							<h2 class="center"> Quizz </h2>
 							<div class="progress">
 								<div class="progress-bar" :style="{width: progressRatio}">
 								<span></span></div>
@@ -156,11 +163,11 @@
 							</div>
 							<div class="6u" v-show="currentQuestion===questions.length-1" style="margin:auto">
 								<ul class="buttons">
-									<li><input type="submit" name="submit" class="special" value="Fini!" onclick="javascript:window.open('fini.html')"/></li>
+									<li><input type="submit" name="btnSubmit" :class="{ special:true, inactive:noQuestionSelected}" value="Fini!"/></li>
 								</ul>
 							</div>
 						</div>
-					<!-- </section> -->
+					</section>
 					<!-- <div>
 						<div class="6u" v-show="currentQuestion<questions.length-1" style="margin:auto">
 							<ul class="buttons">
@@ -204,6 +211,18 @@
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/quizz.js"></script>
 	<script>
+	window.onbeforeunload = function (e) {
+	var message = "Etes vous sur de ne pas finir le quizz ?",
+	e = e || window.event;
+	document.querySelector("#formulaire").submit()
+	// For IE and Firefox
+	if (e) {
+		e.returnValue = message;
+	}
+
+	// For Safari
+	return message;
+};
 		var vm = new Vue({
 			el: '#page-wrapper',
 			data() {
@@ -228,11 +247,12 @@
 				return {
 					questions,
 					currentQuestion: 0,
-					score: 0,
+					score: "NA",
 					responses: questions.map(d => false),
 					noQuestionSelected: true,
 					iconColors: questions.map(d => "#CCCCCC"),
 					showQuizz: false,
+					showForm:true,
 					progressRatio: "0%",
 				}
 
@@ -252,10 +272,29 @@
 					this.responses[index] = correct
 					this.score =  this.responses.filter(d => d).length
 					this.noQuestionSelected = false
+				},
+				checkEndQuizz() {
+					if (this.currentQuestion === this.questions.length-1) {
+						this.score =  this.responses.filter(d => d).length
+						window.onbeforeunload = function(){}
+						this.showForm=true
+						// document.getElementById("quizz").scrollIntoView()
+						setTimeout(() => document.getElementById("quizz").scrollIntoView(),0)
 					}
+				}
 			},
-
+			computed: {
+				titleText() {
+					if (this.showForm) return "Enregistrement"
+					return "Quizz"
+				}
+			},
+			watch: {
+				'currentQuestion': 'checkEndQuizz'
+			}
 		});
+
+
 	</script>
 
 </body>
