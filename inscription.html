@@ -41,6 +41,9 @@
 	[v-cloak] {
   display: none;
 	}
+	#page-wrapper {
+		background-size: cover!important;
+	}
 
 	</style>
 	<script>
@@ -53,7 +56,7 @@
   ga('send', 'pageview');
 
 </script>
-	<div id="page-wrapper" v-cloak>
+	<div id="page-wrapper" :style="{background: currentBackground}" v-cloak>
 
 		<!-- Header -->
 		<header id="header">
@@ -81,7 +84,7 @@
 		<article id="main">
 			<header class="container center">
 			<h2 v-show="showForm"> Inscription </h2>
-			<h2 v-show="!showForm"> Quizz </h2>
+			<h2 v-show="!showForm" style="color:white; font-weight:800"> Quizz </h2>
 		</header>
 			<!-- One -->
 			<form id="formulaire" action="https://docs.google.com/forms/d/e/1FAIpQLSejg1x4YpLDFQLMOpEhBku0ShZ0a2724RK8RWE7HWCrJMErMA/formResponse?embedded=true" method="POST" target="hiddenFrame" onsubmit="javascsript:window.location.href = 'fini.html'">
@@ -269,6 +272,7 @@
 					showForm:true,
 					progressRatio: "0%",
 					loaded:false,
+					currentBackground: "#f3f6fa",
 				}
 
 			},
@@ -302,7 +306,11 @@
 				titleText() {
 					if (this.showForm) return "Enregistrement"
 					return "Quizz"
-				}
+				},
+				currentBackground() {
+					if (this.showForm) return "#f3f6fa"
+					return 'url("images/background.jpg")'
+				},
 			},
 			watch: {
 				'currentQuestion': 'checkEndQuizz'
