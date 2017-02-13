@@ -461,11 +461,11 @@
 			<p style="color:#F0027F"> <strong>Nous vous attendons nombreux au troisième Cycle de Séminaires-Workshops le prochain mardi 6 juin à Lyon et jeudi 8 juin à Paris, réservez les dates.</strong> </p>
 			<ul class="icons">
 				<li><a href="https://www.youtube.com/VisitMex" class="icon circle fa-youtube" target="_blank"><span class="label">Youtube</span></a></li>
-				<li><a href="https://www.instagram.com/visitmexico/" class="icon circle fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+				<li><a href="https://www.instagram.com/mexique.unique/" class="icon circle fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
 			</ul>
 
 			<ul class="copyright">
-				<li>&copy; Conseil de Promotion Touristique du Mexique</li><li>Design: <a href="mailto:v.despeisse@gmail.com" target="_top"> Vincent Despeisse </a>& <a href="http://html5up.net">HTML5 UP</a> </li>
+				<li>&copy; Mexique Unique</li><li>Design: <a href="mailto:v.despeisse@gmail.com" target="_top"> Vincent Despeisse </a>& <a href="http://html5up.net">HTML5 UP</a> </li>
 			</ul>
 
 		</footer>
@@ -483,58 +483,58 @@
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="assets/js/main.js"></script>
 	<script>
-		// Get the modal
-		var modal = document.getElementById('myModal');
+	"use strict";
 
-		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+	if (event.target == modal) {
+		modal.style.display = "none";
+	}
+};
+
+function cycle_images(img_list, currentIndex) {
+	if (currentIndex === img_list.length - 1) return {
+		img: img_list[0],
+		currentIndex: 0
+	};
+	return {
+		img: img_list[currentIndex + 1],
+		currentIndex: currentIndex + 1
+	};
+}
+
+var img_list = ["./images/banner1.jpg", "./images/banner2.jpg", "./images/banner3.jpg"];
+
+var vm = new Vue({
+	el: '#page-wrapper',
+	data: {
+		current_bg: 'url("./images/banner1.jpg")',
+		currentIndex: 0
+	},
+	methods: {
+		auto_cycle: function auto_cycle() {
+			var cycle = cycle_images(img_list, this.currentIndex);
+			this.current_bg = 'url(' + cycle.img + ')';
+			this.currentIndex = cycle.currentIndex;
+			setTimeout(this.auto_cycle, 8000);
+		},
+		force_slider: function force_slider(value) {
+			this.currentIndex = value;
+			this.current_bg = 'url(' + img_list[value] + ')';
+		},
+		openModal: function openModal() {
+			modal.style.display = "block";
+		},
+		closeModal: function closeModal() {
+			modal.style.display = "none";
 		}
+	}
+});
 
-		function cycle_images(img_list, currentIndex) {
-			if (currentIndex === img_list.length - 1) return {
-				img: img_list[0],
-				currentIndex: 0
-			}
-			return {
-				img: img_list[currentIndex + 1],
-				currentIndex: currentIndex + 1
-			}
-		}
-
-		var img_list = ["./images/banner1.jpg", "./images/banner2.jpg", "./images/banner3.jpg"]
-
-		var vm = new Vue({
-			el: '#page-wrapper',
-			data: {
-				current_bg: 'url("./images/banner1.jpg")',
-				currentIndex: 0,
-			},
-			methods: {
-				auto_cycle() {
-					var cycle = cycle_images(img_list, this.currentIndex)
-					console.log(cycle)
-					this.current_bg = 'url(' + cycle.img + ')'
-					console.log(this.current_bg)
-					this.currentIndex = cycle.currentIndex
-					setTimeout(this.auto_cycle, 8000)
-				},
-				force_slider(value) {
-					this.currentIndex = value
-					this.current_bg = 'url(' + img_list[value] + ')'
-				},
-				openModal() {
-					modal.style.display = "block"
-				},
-				closeModal(){
-					modal.style.display = "none"
-				}
-			},
-		});
-
-		setTimeout(vm.auto_cycle, 4000)
+setTimeout(vm.auto_cycle, 4000);
 	</script>
 
 </body>
