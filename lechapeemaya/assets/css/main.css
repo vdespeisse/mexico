@@ -1744,7 +1744,7 @@
 		input[type="password"]:focus,
 		input[type="email"]:focus,
 		textarea:focus {
-			border-color: var(--accent);
+			border-color: #81C61C;
 		}
 
 	input[type="text"],
@@ -2069,8 +2069,8 @@
 		input[type="submit"].special,
 		input[type="reset"].special,
 		.button.special {
-			background: var(--accent);
-			border-color: var(--accent);
+			background: #81C61C;
+			border-color: #81C61C;
 			color: #fff !important;
 		}
 
@@ -2078,8 +2078,8 @@
 			input[type="submit"].special:hover,
 			input[type="reset"].special:hover,
 			.button.special:hover {
-				background: var(--accent-light) !important;
-				border-color: var(--accent-light) !important;
+				background: #9BE036 !important;
+				border-color: #9BE036 !important;
 			}
 
 		input[type="button"].fit,
@@ -2110,7 +2110,7 @@
 		}
 
 		.wrapper.style2 {
-			background-color: var(--accent);
+			background-color: #81C61C;
 			/*background-image: url("images/light-bl.svg"), url("images/light-br.svg");*/
 			background-position: bottom left, bottom right;
 			background-repeat: no-repeat, no-repeat;
@@ -2125,7 +2125,7 @@
 			.wrapper.style2 .button.special {
 				background: #fff;
 				border-color: #fff;
-				color: var(--accent) !important;
+				color: #81C61C !important;
 			}
 
 				.wrapper.style2 .button.special:hover {
@@ -2346,7 +2346,7 @@
 			}
 
 			.dropotron > li:hover > a {
-				background: var(--accent);
+				background: #81C61C;
 				color: #fff;
 			}
 
@@ -3210,9 +3210,11 @@
 #logo {
 	height:46px;
 	margin-top:-8px;
+	width:auto;
 }
 .icon img {
 	max-height:50px;
+	width:auto;
 }
 .nodecoration {
 	text-decoration: none;
