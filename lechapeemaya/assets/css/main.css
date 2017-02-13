@@ -3225,3 +3225,8 @@
 .center {
 	text-align: center;
 }
+@media screen and (max-width: 980px) {
+	.nomobile {
+		display: none;
+	}
+}

@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>Contact - Twenty by HTML5 UP</title>
+	<title>Echapee Maya</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -173,7 +173,8 @@
 						<div style="margin-top:1.5em">
 						<div class="6u" style="margin:auto">
 							<ul class="buttons center">
-								<li><a href="#" class="button special" @click="showQuizz = true;showForm=false" >Valider</a></li>
+								<li><a href="#" class="button special" @click="showQuizz = true;showForm=false;ga('send', 'event', 'inscription', 'debutQuizz', 'echapeemaya');" v-show="quizzEnd===false">Valider</a></li>
+								<li><input type="submit" class="button special" value="Valider" v-show="quizzEnd===true"></li>
 							</ul>
 						</div>
 					</div>
@@ -187,7 +188,7 @@
 							<div class="quizz-icon center" style="margin:auto">
 									<img class="svg" src="images/mayan-numbers/maya.svg"></img>
 							</div>
-							<div class="row nopadding">
+							<div class="row nopadding nomobile">
 							<div v-for="image,index in mayanNumbers" class="quizz-icon 1u">
 								<img class="svg" :src="image" v-if="currentQuestion<=index"></img>
 								<img class="svg" :src="mayanWrong[index]" v-else-if="!responses[index]"></img>
@@ -317,6 +318,7 @@ var vm = new Vue({
 			progressRatio: "0%",
 			loaded: false,
 			currentBackground: "#f3f6fa",
+			quizzEnd: false,
 			mayanNumbers: ["images/mayan-numbers/Maya_1.svg", "images/mayan-numbers/Maya_2.svg", "images/mayan-numbers/Maya_3.svg", "images/mayan-numbers/Maya_4.svg", "images/mayan-numbers/Maya_5.svg", "images/mayan-numbers/Maya_6.svg", "images/mayan-numbers/Maya_7.svg", "images/mayan-numbers/Maya_8.svg", "images/mayan-numbers/Maya_9.svg", "images/mayan-numbers/Maya_10.svg"],
 			mayanWrong: ["images/mayan-numbers/wrong/Maya_1.svg", "images/mayan-numbers/wrong/Maya_2.svg", "images/mayan-numbers/wrong/Maya_3.svg", "images/mayan-numbers/wrong/Maya_4.svg", "images/mayan-numbers/wrong/Maya_5.svg", "images/mayan-numbers/wrong/Maya_6.svg", "images/mayan-numbers/wrong/Maya_7.svg", "images/mayan-numbers/wrong/Maya_8.svg", "images/mayan-numbers/wrong/Maya_9.svg", "images/mayan-numbers/wrong/Maya_10.svg"],
 			mayanRight: ["images/mayan-numbers/right/Maya_1.svg", "images/mayan-numbers/right/Maya_2.svg", "images/mayan-numbers/right/Maya_3.svg", "images/mayan-numbers/right/Maya_4.svg", "images/mayan-numbers/right/Maya_5.svg", "images/mayan-numbers/right/Maya_6.svg", "images/mayan-numbers/right/Maya_7.svg", "images/mayan-numbers/right/Maya_8.svg", "images/mayan-numbers/right/Maya_9.svg", "images/mayan-numbers/right/Maya_10.svg"]
@@ -348,6 +350,7 @@ var vm = new Vue({
 				}).length;
 				window.onbeforeunload = function () {};
 				this.showForm = true;
+				this.quizzEnd = true;
 				// document.getElementById("quizz").scrollIntoView()
 				// setTimeout(function () {
 				// 	return document.getElementById("quizz").scrollIntoView();
