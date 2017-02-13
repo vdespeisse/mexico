@@ -219,7 +219,7 @@
 							</div>
 							<div class="6u" v-show="currentQuestion===questions.length-1" style="margin:auto">
 								<ul class="buttons center">
-									<li><input type="submit" name="btnSubmit" :class="{ special:true, inactive:noQuestionSelected}" value="Fini!"/></li>
+									<li><input type="submit" name="btnSubmit" @click="checkEndQuizz" :class="{ special:true, inactive:noQuestionSelected}" value="Fini!"/></li>
 								</ul>
 							</div>
 						</div>
@@ -349,9 +349,9 @@ var vm = new Vue({
 				window.onbeforeunload = function () {};
 				this.showForm = true;
 				// document.getElementById("quizz").scrollIntoView()
-				setTimeout(function () {
-					return document.getElementById("quizz").scrollIntoView();
-				}, 0);
+				// setTimeout(function () {
+				// 	return document.getElementById("quizz").scrollIntoView();
+				// }, 0);
 			}
 		}
 	},
@@ -361,12 +361,12 @@ var vm = new Vue({
 			return "Quizz";
 		},
 		currentBackground: function currentBackground() {
-			if (!this.showQuizz) return "#f3f6fa";
+			if (this.showForm) return "#f3f6fa";
 			return 'url("images/background.jpg")';
 		}
 	},
 	watch: {
-		'currentQuestion': 'checkEndQuizz'
+		// 'currentQuestion': 'checkEndQuizz'
 	}
 });
 
