@@ -27,6 +27,25 @@
   ga('send', 'pageview');
 
 </script>
+		<div id="myModal" class="modal">
+
+			<!-- Modal content -->
+			<div class="modal-content">
+			<div class="modal-header">
+				<span onclick="vm.closeModal()" class="close">&times;</span>
+			</div>
+			<div class="modal-body">
+				<p>Avant de commencer le défi nous vous invitons à lire les informations de nos
+					<br>partenaires. Si vous l’avez déjà fait vous êtes prêt à démarrer, bon voyage!</p>
+					<div style="min-height:70px">
+					<ul class="row" style="float:right">
+						<li><a href="index.html#partenaires" class="button" onclick="vm.closeModal()"> Les partenaires</a></li>
+						<li><a href="inscription.html" class="button special"> Commencer le quizz</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		</div>
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -44,7 +63,7 @@
 								<li><a href="mexique.html">Mexique</a></li>
 							</ul>
 						</li>
-						<li><a href="inscription.html" class="button special">Participer</a></li>
+						<li><a class="button special" @click="openModal()">Participer</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -109,8 +128,6 @@
 										<div class="content">
 											<section>
 												<a href="#" class="image featured"><img :src="currentImg" alt="" /></a>
-												<p>Profitez du soleil, des vagues, des récifs et des cenotes dans la légendaire péninsule du Yucatán. La Riviera Maya, paradis sur terre, s'étend le long de la côte des Caraïbes, dans ce qui était autrefois des villages de pêcheurs et qui est devenue aujourd'hui une région touristique qui propose des hôtels de luxe, des restaurants haut de gamme, des spas exclusifs, des centres commerciaux et des terrains de golf.
-												</p>
 												<p>La Riviera Maya est sans doute une des meilleures destinations touristiques au monde, avec une capacité d’accueil de plus de 40,000 chambres et reliée par 4,500 vols mensuels via l’aéroport international de Cancún. Avec les plus belles et vastes plages du Mexique, cette région est reconnue par ses magnifiques plages de sable blanc et eau turquoise, caractéristique indéniable des Caraïbes.
 												</p>
 												<p>
@@ -139,6 +156,7 @@
 			<!-- Footer -->
 				<footer id="footer">
 
+					<p style="color:#F0027F"> <strong>Nous vous attendons nombreux au troisième Cycle de Séminaires-Workshops le prochain mardi 6 juin à Lyon et jeudi 8 juin à Paris, réservez les dates.</strong> </p>
 					<ul class="icons">
 						<li><a href="https://www.youtube.com/VisitMex" class="icon circle fa-youtube" target="_blank"><span class="label">Youtube</span></a></li>
 						<li><a href="https://www.instagram.com/mexique.unique/" class="icon circle fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
@@ -163,6 +181,14 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 			"use strict";
+			var modal = document.getElementById('myModal');
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function (event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			};
 
 			function cycle_images(img_list, currentIndex) {
 				if (currentIndex === img_list.length - 1) return { img: img_list[0], currentIndex: 0 };
@@ -187,6 +213,12 @@
 					force_slider: function force_slider(value) {
 						this.currentIndex = value;
 						this.currentImg = 'url(' + img_list[value] + ')';
+					},
+					openModal: function openModal() {
+						modal.style.display = "block";
+					},
+					closeModal: function closeModal() {
+						modal.style.display = "none";
 					}
 				}
 			});
