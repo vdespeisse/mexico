@@ -158,7 +158,7 @@ mexique = [
           {
             text: "Qu’est ce qu'un cénote ?",
             responses: [
-              {text: 'Une grotte replie d’eau au fil du temps', correct: true},
+              {text: 'Une grotte remplie d’eau au fil du temps', correct: true},
               {text: 'Un plateau calcaire'},
               {text: "Le nom d'une plage à Cancun"},
             ]
@@ -169,6 +169,41 @@ mexique = [
               {text: '11ème'},
               {text: '9ème', correct: true},
               {text: '3ème'},
+            ]
+          },
+]
+
+aprilinternational = [
+          {
+            text: "Quel nom porte l’application mobile APRIL International, pour contacter en seulement 2 clics, au Mexique, le plateau d’assistance ?",
+            responses: [
+              {text: 'APRIL Voyage', correct: true},
+              {text: 'Allo April'},
+              {text: 'April Helpdesk'},
+            ]
+          },
+          {
+            text: "Quel est le montant des Frais Médicaux pris en charge par April en cas de dépenses médicales au Mexique ?",
+            responses: [
+              {text: '1 000 €/personne'},
+              {text: '1 000 000 €/personne'},
+              {text: '150 000€/personne', correct: true},
+            ]
+          },
+          {
+            text: "En cas d’annulation de votre voyage au Mexique, pour un motif médical, quelle est le montant de la franchise retenue par APRIL ?",
+            responses: [
+              {text: '0€', correct: true},
+              {text: '150€'},
+              {text: '100% du voyage'},
+            ]
+          },
+          {
+            text: "Quel est le nouveau slogan d’April International ?",
+            responses: [
+              {text: 'April, SOS assurances'},
+              {text: 'APRIL, l’assurance en plus facile', correct: true},
+              {text: 'April, les assurances du voyage'},
             ]
           },
 ]

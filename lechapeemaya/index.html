@@ -70,6 +70,7 @@
 		margin-top: 2em;
 	}
 
+
 	section#iconlist {
 		margin-bottom: 0;
 		transition: margin 0.1s ease;
@@ -120,10 +121,11 @@
 					<li class="submenu">
 						<a href="#">Partenaires</a>
 						<ul>
+							<li><a href="amresorts.html">AMResorts</a></li>
+							<li><a href="aprilinternational.html">April International</a></li>
 							<li><a href="empreinte.html">Empreinte</a></li>
-							<li><a href="amresorts.html">AM Resorts</a></li>
-							<li><a href="xlairways.html">XL Airways</a></li>
 							<li><a href="mexique.html">Mexique</a></li>
+							<li><a href="xlairways.html">XL Airways</a></li>
 						</ul>
 					</li>
 					<li><a class="button special" @click="openModal()">Participer</a></li>
@@ -135,7 +137,7 @@
 		<section id="banner" :style="{ 'background-image': current_bg}">
 
 			<!--
-						".inner" is set up as an inline-block so it automatically expands
+						".inner" is set up  centeras an inline-block so it automatically expands
 						in both directions to fit whatever's inside it. This means it won't
 						automatically wrap lines, so be sure to use line breaks where
 						appropriate (<br />).
@@ -146,8 +148,8 @@
 					<header>
 						<h2>L'éCHAPéE MAYA</h2>
 					</header>
-					<p>Bienvenue à <strong>l'aventure</strong> au Mexique
-						<br />
+					<p>L'échapée Maya, <strong>l'aventure</strong>	<br /> au Mexique commence
+
 						<br />
 						<!-- by <a href="http://html5up.net">HTML5 UP</a>.</p> -->
 						<footer>
@@ -171,21 +173,25 @@
 		<!-- Main -->
 		<article id="main">
 			<section id="iconlist" class="wrapper style1 container special">
-				<div class="row center">
-					<div class="3u 12u(mobile)">
-						<span class="icon"><img src="images/empreinte/logo.jpg"></img>
-						</span>
-					</div>
-					<div class="3u 12u(mobile)">
+				<div class="row center adjustleft">
+					<div class="2u 12u(mobile)">
 						<span class="icon"><img src="images/amresorts/logo.png"></img>
 						</span>
 					</div>
-					<div class="3u 12u(mobile)">
-						<span class="icon"><img src="images/xl_airways/logo.png"></img>
+					<div class="2u 12u(mobile)">
+						<span class="icon"><img src="images/aprilinternational/logo.png"></img>
 							</span>
 					</div>
-					<div class="3u 12u(mobile)">
+					<div class="2u 12u(mobile)">
+						<span class="icon"><img src="images/empreinte/logo.png"></img>
+						</span>
+					</div>
+					<div class="2u 12u(mobile)">
 						<span class="icon"><img src="images/logo.png"></img>
+						</span>
+					</div>
+					<div class="2u 12u(mobile)">
+						<span class="icon"><img src="images/xl_airways/logo.png"></img>
 							</span>
 					</div>
 				</div>
@@ -205,18 +211,20 @@
 					</g>
 				</svg>
 						</span>
-				<h2><strong>L’Échappé Maya</strong> est un défi aux agents de voyages
-							<br>qui pourrait finir avec un incroyable voyage au Mexique
+				<h2><strong>L’Échappée Maya</strong> L’échappée Maya est un défi réservé aux agents
+							<br>de voyages pour vivre un incroyable voyage au 	Mexique.
 						</h2>
 						<p></p>
-				<p>Testez vos connaissances et participez !<br>
-				N’oubliez pas de lire les informations de nos partenaires.</p>
+				<p>Participez en testant vos connaissances !<br>
+			</p>
 
-				<p>L’aventure commence maintenant, et sera ouverte jusqu'au dimanche <strong>30 Avril 2017</strong>.<br>
-					Les <strong>40 voyageurs</strong> seront annoncés dans la première semaine du mois de Mai.<br>N’oubliez pas de lire les informations de nos partenaires.
+				<p>	Dès maintenant, l’aventure commence, elle vous permettra de participer<br>jusqu'au <strong>dimanche 30 Avril</strong> 2017 à cette découverte inédite.<br>
+					N’oubliez pas de lire les informations de nos partenaires, elles vous aideront à répondre au<br>
+					mieux aux questions qualificatives et vous qualifier pour le tirage au sort des futurs participants.</p>
+					<p>Les<strong> 40 explorateurs</strong> sélectionnés seront annoncés la première semaine du mois de Mai.
 				</p>
 
-				<p>Cette échappée sans précédents est un effort conjoint entre Empreinte, AM Resorts, XL Airways et le<br>Conseil de Promotion Touristique du Mexique.<br> Bonne chance!</p>
+				<p>Cette échappée sans précédents est un effort conjoint entre Empreinte, AMResorts, April International, XL Airways et le<br>Conseil de Promotion Touristique du Mexique.<br> Bonne chance!</p>
 				<div class="button special" @click="openModal()">Participer au quizz</div>
 			</header>
 
@@ -322,10 +330,11 @@
 						<section>
 							<a href="amresorts.html" class="image featured"><img src="images/amresorts/image1_home.jpg" alt="" /></a>
 							<header>
-								<h3>AM Resorts</h3>
+								<h3>AMResorts</h3>
 							</header>
-							<p>La collection AMResorts représente 51 hôtels et 19 221 chambres proposant des séjours en tout inclus sur 6 destinations (République Dominicaine, Mexique, Costa Rica, Panama, Jamaïque et Curaçao). Chaque établissement est situé le long des plus
-								belles plages des caraïbes et d’Amérique Latine, offrant prestation de grande qualité en tout inclus, chambres et suites luxueuses, spa de renommée, restaurants gastronomiques, animations et bien plus encore… </p>
+							<p>AMResorts (Dreams, Zoëtry, Secrets, Breathless, Now et Sunscape Resorts & Spas) propose une merveilleuse collection d’hôtels de luxe en tout inclus. Chaque établissement est situé
+							le long des plus belles plages des Caraïbes et d’Amérique Latine, offrant des prestations de grande qualité, chambres et suites luxueuses, spa de renommée, restaurants
+							gastronomiques, animations et bien plus encore.</p>
 							<footer>
 								<ul class="buttons">
 									<li><a href="amresorts.html" class="button small">En savoir plus</a></li>
@@ -355,25 +364,44 @@
 					<div class="6u 12u(narrower)">
 
 						<section>
-							<a href="mexique.html" class="image featured"><img src="images/mexico/image1.jpg" alt="" /></a>
+							<a href="aprilinternational.html" class="image featured"><img src="images/mexico/image1.jpg" alt="" /></a>
 							<header>
-								<h3>Mexique</h3>
+								<h3>April International</h3>
 							</header>
-							<p>Profitez du soleil, des vagues, des récifs et des cenotes dans la légendaire péninsule
-								du Yucatan. La Riviera Maya s'étend le long de la côte des Caraïbes, dans ce qui était
-								autrefois des villages de pêcheurs et qui est devenue aujourd'hui une région
-								touristique qui propose des hôtels de luxes, des restaurants haut de gamme, des spas
-								exclusifs, des centres commerciaux et des terrains de golf.</p>
+							<p>Vous prévoyez un voyage à l’étranger ? Que vous partiez dans le cadre de vacances ou d’un tour du monde, nous vous proposons une solution
+								d’assurance à l'étranger adaptée.Vous préparez votre expatriation ou vous partez vivre à l’étranger ?<br>
+								Couverture médicale, rapatriement, hospitalisation, accident, imprévus divers : choisissez une assurance
+								internationale ainsi que le niveau de garantie dont vous avez besoin.</p>
 								<footer>
 									<ul class="buttons">
-										<li><a href="mexique.html" class="button small">En savoir plus</a></li>
+										<li><a href="aprilinternational.html" class="button small">En savoir plus</a></li>
 									</ul>
 								</footer>
 						</section>
 
 					</div>
 				</div>
+					<div class="row">
+						<div class="6u 12u(narrower)">
 
+							<section>
+								<a href="mexique.html" class="image featured"><img src="images/mexico/image1.jpg" alt="" /></a>
+								<header>
+									<h3>Mexique</h3>
+								</header>
+								<p>Profitez du soleil, des vagues, des récifs et des cénotes de la péninsule légendaire du Yucatán. La Riviera
+									Maya, paradis sur terre, s'étend le long de la côte des Caraïbes, dans ce qui était autrefois des villages de
+									pêcheurs et qui est devenu aujourd'hui une région touristique proposant des hôtels de luxe, des restaurants
+									haut de gamme, des spas exclusifs, des centres commerciaux et des terrains de golf.</p>
+									<footer>
+										<ul class="buttons">
+											<li><a href="mexique.html" class="button small">En savoir plus</a></li>
+										</ul>
+									</footer>
+							</section>
+
+						</div>
+					</div>
 			</section>
 
 		</article>
@@ -395,6 +423,30 @@
 
 		<!-- Footer -->
 		<footer id="footer">
+			<section class="wrapper style1 container special">
+				<div class="row center adjustleft">
+					<div class="2u 12u(mobile)">
+						<span class="icon"><img src="images/amresorts/logo.png"></img>
+						</span>
+					</div>
+					<div class="2u 12u(mobile)">
+						<span class="icon"><img src="images/aprilinternational/logo.png"></img>
+							</span>
+					</div>
+					<div class="2u 12u(mobile)">
+						<span class="icon"><img src="images/empreinte/logo.png"></img>
+						</span>
+					</div>
+					<div class="2u 12u(mobile)">
+						<span class="icon"><img src="images/logo.png"></img>
+						</span>
+					</div>
+					<div class="2u 12u(mobile)">
+						<span class="icon"><img src="images/xl_airways/logo.png"></img>
+							</span>
+					</div>
+				</div>
+			</section>
 
 			<p style="color:#F0027F"> <strong>Nous vous attendons nombreux au troisième Cycle de Séminaires-Workshops le prochain mardi 6 juin à Lyon et jeudi 8 juin à Paris, réservez les dates.</strong> </p>
 			<ul class="icons">

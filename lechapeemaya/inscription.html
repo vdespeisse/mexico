@@ -97,10 +97,11 @@
 						<li class="submenu">
 							<a href="#">Partenaires</a>
 							<ul>
+								<li><a href="amresorts.html">AMResorts</a></li>
+								<li><a href="aprilinternational.html">April International</a></li>
 								<li><a href="empreinte.html">Empreinte</a></li>
-								<li><a href="amresorts.html">AM Resorts</a></li>
-								<li><a href="xlairways.html">XL Airways</a></li>
 								<li><a href="mexique.html">Mexique</a></li>
+								<li><a href="xlairways.html">XL Airways</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -242,7 +243,30 @@
 		</article>
 
 		<!-- Footer -->
-		<footer id="footer">
+		<footer id="footer"><section class="wrapper style1 container special">
+  <div class="row center adjustleft">
+    <div class="2u 12u(mobile)">
+      <span class="icon"><img src="images/amresorts/logo.png"></img>
+      </span>
+    </div>
+    <div class="2u 12u(mobile)">
+      <span class="icon"><img src="images/aprilinternational/logo.png"></img>
+        </span>
+    </div>
+    <div class="2u 12u(mobile)">
+      <span class="icon"><img src="images/empreinte/logo.png"></img>
+      </span>
+    </div>
+    <div class="2u 12u(mobile)">
+      <span class="icon"><img src="images/logo.png"></img>
+      </span>
+    </div>
+    <div class="2u 12u(mobile)">
+      <span class="icon"><img src="images/xl_airways/logo.png"></img>
+        </span>
+    </div>
+  </div>
+</section>
 
 			<p style="color:#F0027F"> <strong>Nous vous attendons nombreux au troisième Cycle de Séminaires-Workshops le prochain mardi 6 juin à Lyon et jeudi 8 juin à Paris, réservez les dates.</strong> </p>
 			<ul class="icons">
@@ -291,16 +315,17 @@ var vm = new Vue({
 		xlairways = shuffle(xlairways);
 		amresorts = shuffle(amresorts);
 		mexique = shuffle(mexique);
+		aprilinternational = shuffle(aprilinternational)
 		questions.push(empreinte[0]);
 		questions.push(empreinte[1]);
 		questions.push(xlairways[0]);
 		questions.push(xlairways[1]);
 		questions.push(amresorts[0]);
 		questions.push(amresorts[1]);
+		questions.push(aprilinternational[0]);
+		questions.push(aprilinternational[1]);
 		questions.push(mexique[0]);
 		questions.push(mexique[1]);
-		questions.push(mexique[2]);
-		questions.push(mexique[3]);
 
 		questions = shuffle(questions);
 		return {

@@ -1673,7 +1673,7 @@
 			opacity: 0.1;
 			position: absolute;
 			top: 1.75em;
-			width: 37%;
+			width: 30%;
 		}
 
 		header.special:before {
@@ -2731,7 +2731,7 @@
 			}
 
 				header.special:before, header.special:after {
-					width: 37%;
+					width: 31%;
 				}
 
 				header.special h2 + p {
@@ -3050,7 +3050,7 @@
 				}
 
 					header.special:before, header.special:after {
-						width: 36%;
+						width: 30%;
 					}
 
 					header.special .icon {
@@ -3216,6 +3216,16 @@
 	max-height:50px;
 	max-width:140px;
 }
+.icon.big img {
+	max-height:120px;
+	max-width:300px;
+	margin-top:-2%;
+}
+.icon.bigger img {
+	max-height:200px;
+	max-width:550px;
+	margin-top:-2%;
+}
 .nodecoration {
 	text-decoration: none;
 	border-bottom:none;
@@ -3293,4 +3303,16 @@
 
 .modal-body {
 	padding: 2em 2em;
+}
+.automargin {
+	margin:auto;
+}
+@media screen and (min-width: 980px) {
+	.adjustleft {
+		margin-left:10%;
+	}
+}
+
+.justify {
+	text-align: justify;
 }
