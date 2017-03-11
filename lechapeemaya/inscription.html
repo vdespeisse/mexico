@@ -166,9 +166,18 @@
 								<input type="text" class="quantumWizTextinputPaperinputInput exportInput" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="Ville" aria-describedby="i.desc.242407320 i.err.242407320" name="entry.91013002" value="" required="" dir="auto" data-initial-dir="auto"
 												data-initial-value="" placeholder="Ville">
 							</div>
+							<div class="9u 12u(mobile)">
+								<label>Pendant la dernière année combien de voyages au Mexique avez vous vendu ? *</label>
+								<input type="text" class="quantumWizTextinputPaperinputInput exportInput" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="Pendant la dernière année combien de voyages au Mexique avez vous vendu ?" aria-describedby="i.desc.268936578 i.err.268936578" name="entry.1013034746" value="" dir="auto" data-initial-dir="auto" data-initial-value="">
+							</div>
+							<div class="9u 12u(mobile)">
+								<label style="font-size:14px!important"><input type="checkbox" name="disponible" value="dispo" v-model="dispo">Je suis disponible pour un voyage au Mexique du 21 au 27 Mai *</input></label>
+							</div>
 							<div style="display: none">
 								<input type="text" class="quantumWizTextinputPaperinputInput exportInput" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="Score Quizz" aria-describedby="i.desc.960640542 i.err.960640542" name="entry.977711154" :value="score" dir="auto" data-initial-dir="auto"
 												data-initial-value="">
+								<input type="text" class="quantumWizTextinputPaperinputInput exportInput" jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="Disponible voyage mexique" aria-describedby="i.desc.750605097 i.err.750605097" name="entry.188615863" :value="dispo" dir="auto" data-initial-dir="auto" data-initial-value="">
+
 							</div>
 						</div>
 						<div style="margin-top:1.5em">
@@ -329,6 +338,7 @@ var vm = new Vue({
 
 		questions = shuffle(questions);
 		return {
+			dispo:true,
 			questions: questions,
 			currentQuestion: 0,
 			score: "NA",
