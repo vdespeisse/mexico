@@ -3312,6 +3312,13 @@
 		margin-left:10%;
 	}
 }
+@media screen and (max-width: 980px) {
+	.hidemobile {
+		display:none;
+		visibility: hidden;
+
+	}
+}
 
 .justify {
 	text-align: justify;
